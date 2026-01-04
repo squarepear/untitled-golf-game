@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://bfb4ttjqffhh8"]
+[gd_scene load_steps=241 format=3 uid="uid://oundfdvyjahh"]
 
 [ext_resource type="PackedScene" uid="uid://m7phgccdnoky" path="res://assets/kenney_minigolf-kit/Models/block.glb" id="1_igvgw"]
 [ext_resource type="PackedScene" uid="uid://b3qwxq3xnapdb" path="res://assets/kenney_minigolf-kit/Models/block-borders.glb" id="2_v6c22"]
