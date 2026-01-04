@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://du0kut2ilulyc" path="res://golfer/ball/ball.gd" id="1_44stc"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_6ejj7"]
-radius = 0.05
-height = 0.1
+radius = 0.03
+height = 0.06
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_44stc"]
 radius = 0.05
@@ -17,6 +17,7 @@ material = SubResource("StandardMaterial3D_44stc")
 size = Vector2(0.075, 0.8)
 
 [node name="Ball" type="RigidBody3D"]
+collision_layer = 2
 script = ExtResource("1_44stc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
