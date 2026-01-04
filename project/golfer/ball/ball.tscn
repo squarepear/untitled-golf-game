@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://co0frd5tjlwxo"]
+[gd_scene load_steps=6 format=3 uid="uid://co0frd5tjlwxo"]
 
 [ext_resource type="Script" uid="uid://du0kut2ilulyc" path="res://golfer/ball/ball.gd" id="1_44stc"]
 
@@ -9,6 +9,13 @@ height = 0.1
 [sub_resource type="SphereShape3D" id="SphereShape3D_44stc"]
 radius = 0.05
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44stc"]
+albedo_color = Color(1, 0.14117648, 0.07450981, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_44stc"]
+material = SubResource("StandardMaterial3D_44stc")
+size = Vector2(0.075, 0.8)
+
 [node name="Ball" type="RigidBody3D"]
 script = ExtResource("1_44stc")
 
@@ -17,3 +24,16 @@ mesh = SubResource("SphereMesh_6ejj7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_44stc")
+
+[node name="Aimer" type="Node3D" parent="."]
+unique_name_in_owner = true
+top_level = true
+
+[node name="Pivot" type="Node3D" parent="Aimer"]
+unique_name_in_owner = true
+
+[node name="PowerIndicator" type="MeshInstance3D" parent="Aimer/Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5176821)
+mesh = SubResource("PlaneMesh_44stc")
+skeleton = NodePath("../../..")

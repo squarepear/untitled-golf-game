@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://3dbr7widkjbe"]
+
+[ext_resource type="Script" uid="uid://m50kp3ve1qd8" path="res://golfer/ball/aimer.gd" id="1_tt1xk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44stc"]
+albedo_color = Color(1, 0.14117648, 0.07450981, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_44stc"]
+material = SubResource("StandardMaterial3D_44stc")
+size = Vector2(0.075, 0.8)
+
+[node name="Aimer" type="Node3D"]
+script = ExtResource("1_tt1xk")
+
+[node name="Pivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5176821)
+mesh = SubResource("PlaneMesh_44stc")
+skeleton = NodePath("../../..")
