@@ -15,6 +15,7 @@ albedo_color = Color(1, 0.14117648, 0.07450981, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_44stc"]
 material = SubResource("StandardMaterial3D_44stc")
 size = Vector2(0.075, 0.8)
+center_offset = Vector3(0, 0, 0.125)
 
 [node name="Ball" type="RigidBody3D"]
 collision_layer = 2
@@ -38,3 +39,5 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5176821)
 mesh = SubResource("PlaneMesh_44stc")
 skeleton = NodePath("../../..")
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]

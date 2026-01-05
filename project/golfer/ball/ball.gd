@@ -1,6 +1,8 @@
 class_name Ball
 extends RigidBody3D
 
+signal stopped_moving
+
 const MAX_POWER := 10.0
 
 var _power_percentage := 0.5
@@ -26,3 +28,7 @@ func adjust_power(amount: float) -> void:
 	# TODO: Add safeguards
 	_power_percentage += amount
 	_power_indicator.mesh.size.y = _power_percentage
+
+
+func _on_sleeping_state_changed() -> void:
+	stopped_moving.emit()
