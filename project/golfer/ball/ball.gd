@@ -31,4 +31,5 @@ func adjust_power(amount: float) -> void:
 
 
 func _on_sleeping_state_changed() -> void:
-	stopped_moving.emit()
+	if sleeping:
+		stopped_moving.emit()
