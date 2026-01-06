@@ -10,7 +10,7 @@ var _can_move: bool = false
 
 
 func _ready() -> void:
-	_ball.stopped_moving.connect(_end_turn)
+	_ball.stopped_moving.connect(_on_ball_stopped_moving)
 
 
 func _input(event: InputEvent) -> void:
@@ -37,3 +37,10 @@ func start_turn() -> void:
 
 func get_target() -> Node3D:
 	return _ball
+
+
+func _on_ball_stopped_moving() -> void:
+	if not _is_active:
+		return
+
+	_end_turn()
