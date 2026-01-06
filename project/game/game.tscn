@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://pwbdwb7q21lx"]
 
-[ext_resource type="PackedScene" uid="uid://b1upx0nbwjsg1" path="res://levels/level.tscn" id="1_l1rk1"]
+[ext_resource type="PackedScene" uid="uid://b1upx0nbwjsg1" path="res://levels/level0.tscn" id="1_l1rk1"]
 [ext_resource type="Script" uid="uid://c8bidp1i8vmba" path="res://game/game.gd" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://d2fc7dtn8ax1a" path="res://hole/hole.tscn" id="3_dakft"]
 [ext_resource type="Script" uid="uid://dtj7utn5lsxi0" path="res://hole/hole_controller.gd" id="4_u5opy"]
