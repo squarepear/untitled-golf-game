@@ -13,3 +13,7 @@ func start_turn() -> void:
 func _end_turn() -> void:
 	_is_active = false
 	turn_ended.emit()
+
+
+func get_target() -> Node3D:
+	return null

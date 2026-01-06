@@ -33,3 +33,7 @@ func _input(event: InputEvent) -> void:
 func start_turn() -> void:
 	super()
 	_can_move = true
+
+
+func get_target() -> Node3D:
+	return _ball
