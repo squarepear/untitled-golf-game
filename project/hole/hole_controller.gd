@@ -18,7 +18,7 @@ func _input(_event: InputEvent) -> void:
 func start_turn() -> void:
 	super()
 	var timer = get_tree().create_timer(5.0)
-	timer.timeout.connect(_end_turn)
+	timer.timeout.connect(end_turn)
 
 
 func get_target() -> Node3D:

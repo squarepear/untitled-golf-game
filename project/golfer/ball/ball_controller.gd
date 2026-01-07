@@ -43,4 +43,4 @@ func _on_ball_stopped_moving() -> void:
 	if not _is_active:
 		return
 
-	_end_turn()
+	end_turn()

@@ -10,9 +10,11 @@ func start_turn() -> void:
 	_is_active = true
 
 
-func _end_turn() -> void:
+func end_turn(silent := false) -> void:
 	_is_active = false
-	turn_ended.emit()
+	
+	if not silent:
+		turn_ended.emit()
 
 
 func get_target() -> Node3D:

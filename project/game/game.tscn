@@ -12,7 +12,11 @@
 script = ExtResource("1_vasa2")
 _turn_order = [NodePath("BallController"), NodePath("HoleController")]
 
+[node name="Course" parent="." instance=ExtResource("7_y36n6")]
+unique_name_in_owner = true
+
 [node name="Hole" parent="." instance=ExtResource("3_dakft")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21902773, 0.13541473, 0.18958667)
 
 [node name="HoleController" type="Node" parent="." node_paths=PackedStringArray("_hole")]
@@ -31,5 +35,3 @@ metadata/_custom_type_script = "uid://c3qt2soka0vm8"
 [node name="PlayerCamera" parent="." node_paths=PackedStringArray("_target") instance=ExtResource("7_u5opy")]
 unique_name_in_owner = true
 _target = NodePath("../Ball")
-
-[node name="Course" parent="." instance=ExtResource("7_y36n6")]
