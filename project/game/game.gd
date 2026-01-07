@@ -6,16 +6,15 @@ var _players: Array[Controller]
 
 @onready var _course: Course = %Course
 @onready var _camera: PlayerCamera = %PlayerCamera
-@onready var _hole: Hole = %Hole
 
 
 func _ready() -> void:
 	_players = _turn_order.duplicate()
 	_spawn_balls()
+	_spawn_hole()
 
 	for controller in _turn_order:
 		controller.turn_ended.connect(_next_turn)
-	_hole.ball_entered.connect(_on_ball_entered_hole)
 
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
@@ -57,6 +56,7 @@ func _level_complete() -> void:
 	_course.advance_level()
 
 	_spawn_balls()
+	_spawn_hole()
 
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
@@ -79,3 +79,22 @@ func _spawn_balls() -> void:
 		player.set_target(ball)
 		
 		index += 1
+
+
+func _spawn_hole() -> void:
+	var hole_controller_index := _players.find_custom(
+		func(controller: Controller): return controller is HoleController
+	)
+
+	assert(hole_controller_index >= 0)
+
+	var hole_controller = _players[hole_controller_index]
+
+	if hole_controller.get_target():
+		hole_controller.get_target().queue_free()
+
+	var hole := preload("res://hole/hole.tscn").instantiate()
+	add_child(hole)
+	hole.global_position = _course.get_current_level().get_hole_spawn_position()
+	hole_controller.set_target(hole)
+	hole.ball_entered.connect(_on_ball_entered_hole)

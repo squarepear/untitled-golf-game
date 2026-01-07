@@ -3,9 +3,6 @@ extends Controller
 
 @export var _hole: Hole
 
-func _ready() -> void:
-	turn_ended.connect(_hole.move.bind(Vector2.ZERO))
-
 
 func _input(_event: InputEvent) -> void:
 	if not _is_active:
@@ -19,6 +16,11 @@ func start_turn() -> void:
 	super()
 	var timer = get_tree().create_timer(5.0)
 	timer.timeout.connect(end_turn)
+
+
+func set_target(target: Hole) -> void:
+	_hole = target
+	turn_ended.connect(_hole.move.bind(Vector2.ZERO))
 
 
 func get_target() -> Node3D:

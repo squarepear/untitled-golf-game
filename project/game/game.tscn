@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://pwbdwb7q21lx"]
+[gd_scene load_steps=6 format=3 uid="uid://pwbdwb7q21lx"]
 
 [ext_resource type="Script" uid="uid://c8bidp1i8vmba" path="res://game/game.gd" id="1_vasa2"]
-[ext_resource type="PackedScene" uid="uid://d2fc7dtn8ax1a" path="res://hole/hole.tscn" id="3_dakft"]
 [ext_resource type="Script" uid="uid://dtj7utn5lsxi0" path="res://hole/hole_controller.gd" id="4_u5opy"]
 [ext_resource type="Script" uid="uid://c3qt2soka0vm8" path="res://golfer/ball/ball_controller.gd" id="6_l8g03"]
 [ext_resource type="PackedScene" uid="uid://6gf1dli370tp" path="res://player_camera/player_camera.tscn" id="7_u5opy"]
@@ -14,13 +13,8 @@ _turn_order = [NodePath("BallController"), NodePath("HoleController")]
 [node name="Course" parent="." instance=ExtResource("7_y36n6")]
 unique_name_in_owner = true
 
-[node name="Hole" parent="." instance=ExtResource("3_dakft")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21902773, 0.13541473, 0.18958667)
-
-[node name="HoleController" type="Node" parent="." node_paths=PackedStringArray("_hole")]
+[node name="HoleController" type="Node" parent="."]
 script = ExtResource("4_u5opy")
-_hole = NodePath("../Hole")
 
 [node name="BallController" type="Node" parent="."]
 script = ExtResource("6_l8g03")

@@ -10,3 +10,7 @@ func get_par() -> int:
 
 func get_spawn_positions() -> Array[Vector3]:
 	return $SpawnPatch.get_positions()
+
+
+func get_hole_spawn_position() -> Vector3:
+	return $HoleSpawn.global_position
