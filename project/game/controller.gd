@@ -17,5 +17,8 @@ func end_turn(silent := false) -> void:
 		turn_ended.emit()
 
 
+func set_target(target) -> void:
+	pass
+
 func get_target() -> Node3D:
 	return null

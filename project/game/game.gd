@@ -11,12 +11,14 @@ var _players: Array[Controller]
 
 func _ready() -> void:
 	_players = _turn_order.duplicate()
+	_spawn_balls()
 
 	for controller in _turn_order:
 		controller.turn_ended.connect(_next_turn)
 	_hole.ball_entered.connect(_on_ball_entered_hole)
 
 	_turn_order[0].start_turn()
+	_camera.set_target(_turn_order[0].get_target())
 
 
 func _next_turn() -> void:
@@ -53,8 +55,27 @@ func _level_complete() -> void:
 
 	_turn_order = _players.duplicate()
 	_course.advance_level()
-	
-	# TODO: Update positions
+
+	_spawn_balls()
 
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
+
+
+func _spawn_balls() -> void:
+	var index: int = 0
+	
+	var positions = _course.get_current_level().get_spawn_positions()
+	for player in _players:
+		if player is not BallController:
+			continue
+		
+		if player.get_target():
+			player.get_target().queue_free()
+		
+		var ball := preload("res://golfer/ball/ball.tscn").instantiate()
+		add_child(ball)
+		ball.global_position = positions[index]
+		player.set_target(ball)
+		
+		index += 1

@@ -6,6 +6,7 @@ signal stopped_moving
 const MAX_POWER := 10.0
 
 var _power_percentage := 0.5
+var _has_hit := false
 
 @onready var _aimer: Node3D = %Aimer
 @onready var _pivot: Node3D = %Pivot
@@ -18,6 +19,7 @@ func _process(_delta: float) -> void:
 
 func hit() -> void:
 	apply_impulse(-_pivot.basis.z * _power_percentage * MAX_POWER)
+	_has_hit = true
 
 
 func turn(angle: float) -> void:
@@ -31,5 +33,6 @@ func adjust_power(amount: float) -> void:
 
 
 func _on_sleeping_state_changed() -> void:
-	if sleeping:
+	if sleeping and _has_hit:
+		_has_hit = false
 		stopped_moving.emit()

@@ -9,10 +9,6 @@ const TURN_AMOUNT: float = 0.1
 var _can_move: bool = false
 
 
-func _ready() -> void:
-	_ball.stopped_moving.connect(_on_ball_stopped_moving)
-
-
 func _input(event: InputEvent) -> void:
 	if not _can_move or not _is_active:
 		return
@@ -33,6 +29,11 @@ func _input(event: InputEvent) -> void:
 func start_turn() -> void:
 	super()
 	_can_move = true
+
+
+func set_target(target: Ball) -> void:
+	_ball = target
+	_ball.stopped_moving.connect(_on_ball_stopped_moving)
 
 
 func get_target() -> Node3D:
