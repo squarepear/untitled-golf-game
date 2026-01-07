@@ -1,0 +1,8 @@
+class_name Level
+extends Node3D
+
+@export var _par: int
+
+
+func get_par() -> int:
+	return _par
