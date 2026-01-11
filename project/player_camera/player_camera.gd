@@ -8,7 +8,6 @@ static var _main: PlayerCamera
 @export var _target: Node3D
 
 @onready var _camera: Camera3D = %Camera3D
-@onready var _forward: Node3D = %Forward
 
 
 static func main() -> PlayerCamera:
