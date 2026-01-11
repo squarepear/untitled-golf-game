@@ -32,6 +32,8 @@ func _on_ball_entered_hole(ball: Ball) -> void:
 		func(controller: Controller): return controller.get_target() == ball
 	)
 
+	ball.queue_free()
+
 	if ball_controller_index < 0:
 		printerr("Inactive ball entered hole... That's not supposed to happen!")
 		return
@@ -49,7 +51,7 @@ func _on_ball_entered_hole(ball: Ball) -> void:
 
 func _level_complete() -> void:
 	print("Level %d complete!" % _course.get_current_level_index())
-	for controller in _turn_order:
+	for controller in _players:
 		controller.end_turn(true)
 
 	_turn_order = _players.duplicate()
