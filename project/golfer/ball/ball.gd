@@ -1,10 +1,11 @@
 class_name Ball
-extends RigidBody3D
+extends CharacterBody3D
 
 signal stopped_moving
 
 const MAX_POWER := 10.0
 const SLEEP_THRESHOLD := 0.03
+const COLLISION_ABSORPTION := 0.8
 
 var _power_percentage := 0.5
 var _has_hit := false
@@ -18,16 +19,25 @@ var _has_hit := false
 func _process(_delta: float) -> void:
 	_aimer.global_position = global_position
 
+
+func _physics_process(delta: float) -> void:
 	if _has_hit and _sleep_timer.time_left <= 0.01:
-		if linear_velocity.length() < SLEEP_THRESHOLD:
-			linear_velocity = Vector3.ZERO
-			sleeping = true
+		if velocity.length() < SLEEP_THRESHOLD:
+			velocity = Vector3.ZERO
 			_has_hit = false
 			stopped_moving.emit()
+			return
+
+	velocity -= velocity.normalized() * delta
+
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		var normal = collision.get_normal()
+		velocity = velocity.bounce(normal) * COLLISION_ABSORPTION
 
 
 func hit() -> void:
-	apply_impulse(-_pivot.basis.z * _power_percentage * MAX_POWER)
+	velocity = -_pivot.basis.z * _power_percentage * MAX_POWER
 	_has_hit = true
 	_sleep_timer.start()
 
