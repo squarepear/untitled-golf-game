@@ -9,7 +9,7 @@ func _input(_event: InputEvent) -> void:
 		return
 
 	var dir := Input.get_vector("move_left", "move_right", "move_backward", "move_forward")
-	_hole.move(dir)
+	_hole.move(PlayerCamera.main().get_dir(dir))
 
 
 func start_turn() -> void:

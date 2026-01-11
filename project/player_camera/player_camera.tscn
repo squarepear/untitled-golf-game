@@ -5,5 +5,10 @@
 [node name="PlayerCamera" type="Node3D"]
 script = ExtResource("1_fnpht")
 
+[node name="Forward" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
 [node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.8894084, 0.45711344, 0, -0.45711344, 0.8894084, 0, 2.4446292, 3.448729)
