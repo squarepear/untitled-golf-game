@@ -1,10 +1,10 @@
 class_name BallController
 extends Controller
 
-@export var _ball: Ball
-
 const POWER_ADJUST_AMOUNT: float = 0.05
 const TURN_AMOUNT: float = 0.1
+
+@export var _ball: Ball
 
 var _can_move: bool = false
 

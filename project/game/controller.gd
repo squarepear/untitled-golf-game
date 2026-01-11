@@ -12,13 +12,14 @@ func start_turn() -> void:
 
 func end_turn(silent := false) -> void:
 	_is_active = false
-	
+
 	if not silent:
 		turn_ended.emit()
 
 
 func set_target(target) -> void:
 	pass
+
 
 func get_target() -> Node3D:
 	return null

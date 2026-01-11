@@ -64,20 +64,20 @@ func _level_complete() -> void:
 
 func _spawn_balls() -> void:
 	var index: int = 0
-	
+
 	var positions = _course.get_current_level().get_spawn_positions()
 	for player in _players:
 		if player is not BallController:
 			continue
-		
+
 		if player.get_target():
 			player.get_target().queue_free()
-		
+
 		var ball := preload("res://golfer/ball/ball.tscn").instantiate()
 		add_child(ball)
 		ball.global_position = positions[index]
 		player.set_target(ball)
-		
+
 		index += 1
 
 
