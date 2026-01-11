@@ -31,6 +31,11 @@ func start_turn() -> void:
 	_can_move = true
 
 
+func end_turn(silent := false) -> void:
+	super(silent)
+	_can_move = false
+
+
 func set_target(target: Ball) -> void:
 	_ball = target
 	_ball.stopped_moving.connect(_on_ball_stopped_moving)

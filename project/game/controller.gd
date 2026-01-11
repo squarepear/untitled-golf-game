@@ -1,23 +1,31 @@
 class_name Controller
 extends Node
 
+signal turn_started
 signal turn_ended
 
 var _is_active: bool = false
 
 
 func start_turn() -> void:
+	if _is_active:
+		return
+
 	_is_active = true
+	turn_started.emit()
 
 
 func end_turn(silent := false) -> void:
+	if not _is_active:
+		return
+
 	_is_active = false
 
 	if not silent:
 		turn_ended.emit()
 
 
-func set_target(target) -> void:
+func set_target(_target) -> void:
 	pass
 
 

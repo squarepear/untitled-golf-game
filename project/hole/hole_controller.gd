@@ -3,6 +3,8 @@ extends Controller
 
 @export var _hole: Hole
 
+var _timer: SceneTreeTimer
+
 
 func _input(_event: InputEvent) -> void:
 	if not _is_active:
@@ -14,8 +16,16 @@ func _input(_event: InputEvent) -> void:
 
 func start_turn() -> void:
 	super()
-	var timer = get_tree().create_timer(5.0)
-	timer.timeout.connect(end_turn)
+	_timer = get_tree().create_timer(5.0)
+	_timer.timeout.connect(end_turn)
+
+
+func end_turn(silent := false) -> void:
+	if _timer:
+		_timer.timeout.disconnect(end_turn)
+
+	super(silent)
+
 
 
 func set_target(target: Hole) -> void:
