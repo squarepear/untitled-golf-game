@@ -44,6 +44,7 @@ func _on_ball_entered_hole(ball: Ball) -> void:
 
 	if ball_controller_index == 0:
 		_next_turn()
+		_turn_order[0].end_turn(true)
 		_turn_order.remove_at(_turn_order.size() - 1)
 	else:
 		_turn_order.remove_at(ball_controller_index)
