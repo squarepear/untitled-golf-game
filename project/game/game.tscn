@@ -8,7 +8,7 @@
 
 [node name="Game" type="Node3D" node_paths=PackedStringArray("_turn_order")]
 script = ExtResource("1_vasa2")
-_turn_order = [NodePath("BallController"), NodePath("HoleController")]
+_turn_order = [NodePath("BallController"), NodePath("HoleController"), NodePath("BallController2"), NodePath("BallController3")]
 
 [node name="Course" parent="." instance=ExtResource("7_y36n6")]
 unique_name_in_owner = true
@@ -17,6 +17,14 @@ unique_name_in_owner = true
 script = ExtResource("4_u5opy")
 
 [node name="BallController" type="Node" parent="."]
+script = ExtResource("6_l8g03")
+metadata/_custom_type_script = "uid://c3qt2soka0vm8"
+
+[node name="BallController2" type="Node" parent="."]
+script = ExtResource("6_l8g03")
+metadata/_custom_type_script = "uid://c3qt2soka0vm8"
+
+[node name="BallController3" type="Node" parent="."]
 script = ExtResource("6_l8g03")
 metadata/_custom_type_script = "uid://c3qt2soka0vm8"
 

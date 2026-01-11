@@ -40,4 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5176821)
 mesh = SubResource("PlaneMesh_44stc")
 skeleton = NodePath("../../..")
 
-[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
+[node name="SleepTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
