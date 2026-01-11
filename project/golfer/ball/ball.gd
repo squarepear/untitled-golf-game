@@ -30,10 +30,17 @@ func _physics_process(delta: float) -> void:
 
 	velocity -= velocity.normalized() * delta
 
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		var normal = collision.get_normal()
+	var collision := move_and_collide(velocity * delta)
+	while collision:
+		var normal := collision.get_normal()
+		var remainder := collision.get_remainder()
 		velocity = velocity.bounce(normal) * COLLISION_ABSORPTION
+
+		if remainder.length() < 0.01:
+			break
+
+		remainder = remainder.bounce(normal)
+		collision = move_and_collide(remainder)
 
 
 func hit() -> void:
