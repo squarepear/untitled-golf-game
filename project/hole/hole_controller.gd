@@ -21,7 +21,7 @@ func start_turn() -> void:
 
 
 func end_turn(silent := false) -> void:
-	if _timer:
+	if _timer && _timer.timeout.is_connected(end_turn):
 		_timer.timeout.disconnect(end_turn)
 
 	super(silent)
