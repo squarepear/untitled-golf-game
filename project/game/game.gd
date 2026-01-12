@@ -7,7 +7,7 @@ var _players: Array[Controller]
 @onready var _course: Course = %Course
 @onready var _camera: PlayerCamera = %PlayerCamera
 @onready var _hud := %Hud
-
+@onready var _scorekeeper := %Scorekeeper
 
 func _ready() -> void:
 	_players = _turn_order.duplicate()
@@ -16,6 +16,8 @@ func _ready() -> void:
 
 	for controller in _turn_order:
 		controller.turn_ended.connect(_next_turn)
+
+	_scorekeeper.set_players(_players)
 
 	_hud.set_current_player(_turn_order[0])
 	_turn_order[0].start_turn()
@@ -56,6 +58,8 @@ func _level_complete() -> void:
 	print("Level %d complete!" % _course.get_current_level_index())
 	for controller in _players:
 		controller.end_turn(true)
+
+	_scorekeeper.update_course_score(_course.get_current_level())
 
 	_turn_order = _players.duplicate()
 	_course.advance_level()

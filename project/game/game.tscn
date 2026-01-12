@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://pwbdwb7q21lx"]
+[gd_scene load_steps=8 format=3 uid="uid://pwbdwb7q21lx"]
 
 [ext_resource type="Script" uid="uid://c8bidp1i8vmba" path="res://game/game.gd" id="1_vasa2"]
 [ext_resource type="Script" uid="uid://dtj7utn5lsxi0" path="res://hole/hole_controller.gd" id="4_u5opy"]
 [ext_resource type="PackedScene" uid="uid://djd2yf6831xmo" path="res://hud/HUD.tscn" id="6_dakft"]
 [ext_resource type="Script" uid="uid://c3qt2soka0vm8" path="res://golfer/ball/ball_controller.gd" id="6_l8g03"]
+[ext_resource type="Script" uid="uid://gcvhyr2oydx1" path="res://game/scorekeeper/scorekeeper.gd" id="7_l8g03"]
 [ext_resource type="PackedScene" uid="uid://6gf1dli370tp" path="res://player_camera/player_camera.tscn" id="7_u5opy"]
 [ext_resource type="PackedScene" uid="uid://qp7aqwt0frih" path="res://courses/course.tscn" id="7_y36n6"]
 
@@ -36,3 +37,8 @@ unique_name_in_owner = true
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_dakft")]
 unique_name_in_owner = true
+
+[node name="Scorekeeper" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_l8g03")
+metadata/_custom_type_script = "uid://gcvhyr2oydx1"

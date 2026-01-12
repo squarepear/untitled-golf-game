@@ -1,6 +1,8 @@
 class_name BallController
 extends Controller
 
+signal ball_hit
+
 const POWER_ADJUST_AMOUNT: float = 0.05
 const TURN_AMOUNT: float = 0.1
 
@@ -23,6 +25,7 @@ func _input(event: InputEvent) -> void:
 		_ball.turn(-TURN_AMOUNT)
 	if event.is_action_pressed("hit"):
 		_ball.hit()
+		ball_hit.emit()
 		_can_move = false
 
 
