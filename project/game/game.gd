@@ -6,6 +6,7 @@ var _players: Array[Controller]
 
 @onready var _course: Course = %Course
 @onready var _camera: PlayerCamera = %PlayerCamera
+@onready var _hud := %Hud
 
 
 func _ready() -> void:
@@ -16,13 +17,14 @@ func _ready() -> void:
 	for controller in _turn_order:
 		controller.turn_ended.connect(_next_turn)
 
+	_hud.set_current_player(_turn_order[0])
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
 
 
 func _next_turn() -> void:
 	_turn_order.append(_turn_order.pop_front())
-	print(_turn_order[0])
+	_hud.set_current_player(_turn_order[0])
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
 

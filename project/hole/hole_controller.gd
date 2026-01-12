@@ -35,3 +35,7 @@ func set_target(target: Hole) -> void:
 
 func get_target() -> Node3D:
 	return _hole
+
+
+func get_time_remaining() -> int:
+	return int(_timer.time_left)

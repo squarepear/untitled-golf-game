@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://djd2yf6831xmo"]
+
+[ext_resource type="Script" uid="uid://gmshy1w5u0l0" path="res://hud/hud.gd" id="1_g1j8k"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g1j8k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Current Player:"
+
+[node name="CurrentPlayerLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TimeLeft" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TimeLeft"]
+layout_mode = 2
+text = "Time left:"
+
+[node name="TimeLeftLabel" type="Label" parent="VBoxContainer/TimeLeft"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
