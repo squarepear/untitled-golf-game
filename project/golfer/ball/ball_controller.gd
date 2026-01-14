@@ -3,7 +3,7 @@ extends Controller
 
 signal ball_hit
 
-const POWER_ADJUST_AMOUNT: float = 0.05
+const POWER_ADJUST_AMOUNT: float = 0.025
 const TURN_AMOUNT: float = 0.1
 
 @export var _ball: Ball
@@ -11,18 +11,22 @@ const TURN_AMOUNT: float = 0.1
 var _can_move: bool = false
 
 
+func _process(_delta: float) -> void:
+	if not _can_move or not _is_active:
+		return
+
+	_ball.turn(-PlayerCamera.main().get_dir(Vector2.RIGHT).angle())
+
+	if Input.is_action_pressed("move_forward"):
+		_ball.adjust_power(POWER_ADJUST_AMOUNT)
+	if Input.is_action_pressed("move_backward"):
+		_ball.adjust_power(-POWER_ADJUST_AMOUNT)
+
+
 func _input(event: InputEvent) -> void:
 	if not _can_move or not _is_active:
 		return
 
-	if event.is_action_pressed("increase_power"):
-		_ball.adjust_power(POWER_ADJUST_AMOUNT)
-	if event.is_action_pressed("decrease_power"):
-		_ball.adjust_power(-POWER_ADJUST_AMOUNT)
-	if event.is_action_pressed("rotate_left"):
-		_ball.turn(TURN_AMOUNT)
-	if event.is_action_pressed("rotate_right"):
-		_ball.turn(-TURN_AMOUNT)
 	if event.is_action_pressed("hit"):
 		_ball.hit()
 		ball_hit.emit()

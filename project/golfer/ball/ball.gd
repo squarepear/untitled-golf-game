@@ -50,7 +50,7 @@ func hit() -> void:
 
 
 func turn(angle: float) -> void:
-	_pivot.rotate_y(angle)
+	_pivot.rotation.y = angle
 
 
 func adjust_power(amount: float) -> void:
