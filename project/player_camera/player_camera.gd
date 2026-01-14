@@ -18,7 +18,6 @@ func _ready() -> void:
 	if _main:
 		_main.queue_free()
 
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_main = self
 
 
@@ -27,6 +26,9 @@ func _process(delta: float) -> void:
 		return
 
 	global_position = lerp(global_position, _target.global_position, delta)
+
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		return
 
 	rotate_y(-(Input.get_last_mouse_velocity().x / get_viewport().get_visible_rect().size.x) * ROTATION_SPEED)
 	_camera.rotate_x(-(Input.get_last_mouse_velocity().y / get_viewport().get_visible_rect().size.x) * ROTATION_SPEED)
@@ -39,3 +41,10 @@ func set_target(target: Node3D) -> void:
 func get_dir(dir: Vector2) -> Vector2:
 	var vec := Vector3(dir.x, 0.0, -dir.y).rotated(Vector3.UP, rotation.y)
 	return Vector2(vec.x, vec.z)
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	elif event.is_action_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
