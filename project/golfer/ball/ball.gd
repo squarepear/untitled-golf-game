@@ -63,6 +63,10 @@ func adjust_power(amount: float) -> void:
 	_power_indicator.mesh.size.y = _power_percentage
 
 
+func reset_aimer_display() -> void:
+	_power_indicator.mesh.size.y = _power_percentage
+
+
 func set_aimer_visibility(aimer_is_visible: bool) -> void:
 	if aimer_is_visible:
 		_aimer.show()
