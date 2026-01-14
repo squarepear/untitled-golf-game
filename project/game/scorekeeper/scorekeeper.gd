@@ -1,32 +1,68 @@
 class_name Scorekeeper
 extends Node
 
-var _course_scores: Dictionary[Controller, int]
-var _level_scores: Dictionary[Controller, int]
+signal updated
+
+var _current_level := 0
+var _scores: Dictionary[Controller, LevelScores]
 
 
-func set_players(players: Array[Controller]) -> void:
+func set_up(course: Course, players: Array[Controller]) -> void:
 	for player in players:
 		if player is BallController:
-			player.ball_hit.connect(update_level_score.bind(player))
-		_course_scores[player] = 0
-		_level_scores[player] = 0
+			player.ball_hit.connect(increment_level_score.bind(player))
+		_scores[player] = LevelScores.new(course.get_levels())
 
 
-func update_level_score(player: Controller):
-	_level_scores[player] += 1
+func increment_level_score(player: Controller):
+	_scores[player].increment_level_score(_current_level)
 
 
-func update_course_score(level: Level) -> void:
-	var par = level.get_par()
-	for player in _course_scores.keys():
-		_course_scores[player] += _level_scores[player] - par
-		_level_scores[player] = 0
+func complete_level(player: Controller = null):
+	if player:
+		_scores[player].complete_level(_current_level)
+		updated.emit()
+		return
+
+	for p in _scores.keys():
+		_scores[p].complete_level(_current_level)
+
+	_current_level += 1
+	updated.emit()
 
 
-func get_course_scores() -> Array[int]:
-	return _course_scores.values()
+func get_scores() -> Array[LevelScores]:
+	return _scores.values()
 
 
-func get_level_scores() -> Array[int]:
-	return _level_scores.values()
+class LevelScores:
+	var pars: Array[int] = []
+	var scores: Array[int] = []
+	var is_complete: Array[bool] = []
+
+
+	func _init(levels: Array[Level]) -> void:
+		for level in levels:
+			pars.append(level.get_par())
+			scores.append(0)
+			is_complete.append(false)
+
+
+	func increment_level_score(level_index: int) -> void:
+		scores[level_index] += 1
+
+
+	func complete_level(level_index: int) -> void:
+		is_complete[level_index] = true
+
+
+	func course_score() -> int:
+		var total := 0
+
+		for i in scores.size():
+			if not is_complete[i]:
+				continue
+
+			total += scores[i] - pars[i]
+
+		return total

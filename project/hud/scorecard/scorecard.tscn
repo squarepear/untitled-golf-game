@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://bog4pyusw53tc"]
+
+[ext_resource type="PackedScene" uid="uid://ce7t4yjrk7mq1" path="res://hud/scorecard/score_square.tscn" id="1_t2b3i"]
+[ext_resource type="Script" uid="uid://bqxulpc7gywh6" path="res://hud/scorecard/scorecard.gd" id="1_tc0n1"]
+
+[sub_resource type="Theme" id="Theme_t2b3i"]
+default_font_size = 32
+
+[node name="Scorecard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_t2b3i")
+script = ExtResource("1_tc0n1")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 11
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Player 1"
+
+[node name="ScoreSquare1" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare2" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare3" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare4" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare5" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare6" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare7" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare8" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquare9" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreSquareTotal" parent="GridContainer" instance=ExtResource("1_t2b3i")]
+layout_mode = 2
+size_flags_horizontal = 3

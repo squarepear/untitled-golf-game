@@ -27,3 +27,7 @@ func get_current_level() -> Level:
 
 func get_current_level_index() -> int:
 	return _current_level
+
+
+func get_levels() -> Array[Level]:
+	return _levels

@@ -5,6 +5,7 @@ var _current_player: Controller
 @onready var _current_player_label = %CurrentPlayerLabel
 @onready var _time_left_label = %TimeLeftLabel
 @onready var _time_left: HBoxContainer = %TimeLeft
+@onready var _scorecard: Scorecard = %Scorecard
 
 
 func _process(_delta: float) -> void:
@@ -19,3 +20,7 @@ func set_current_player(current_player: Controller) -> void:
 		_time_left.show()
 	else:
 		_time_left.hide()
+
+
+func set_scorekeeper(scorekeeper: Scorekeeper) -> void:
+	_scorecard.set_scorekeeper(scorekeeper)

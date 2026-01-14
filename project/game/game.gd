@@ -7,7 +7,7 @@ var _players: Array[Controller]
 @onready var _course: Course = %Course
 @onready var _camera: PlayerCamera = %PlayerCamera
 @onready var _hud := %Hud
-@onready var _scorekeeper := %Scorekeeper
+@onready var _scorekeeper: Scorekeeper = %Scorekeeper
 
 func _ready() -> void:
 	_players = _turn_order.duplicate()
@@ -17,9 +17,10 @@ func _ready() -> void:
 	for controller in _turn_order:
 		controller.turn_ended.connect(_next_turn)
 
-	_scorekeeper.set_players(_players)
+	_scorekeeper.set_up(_course, _players)
 
 	_hud.set_current_player(_turn_order[0])
+	_hud.set_scorekeeper(_scorekeeper)
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
 
@@ -49,8 +50,10 @@ func _on_ball_entered_hole(ball: Ball) -> void:
 	if ball_controller_index == 0:
 		_turn_order[0].end_turn(true)
 		_next_turn()
+		_scorekeeper.complete_level(_turn_order[0])
 		_turn_order.remove_at(_turn_order.size() - 1)
 	else:
+		_scorekeeper.complete_level(_turn_order[ball_controller_index])
 		_turn_order.remove_at(ball_controller_index)
 
 
@@ -59,7 +62,7 @@ func _level_complete() -> void:
 	for controller in _players:
 		controller.end_turn(true)
 
-	_scorekeeper.update_course_score(_course.get_current_level())
+	_scorekeeper.complete_level()
 
 	_turn_order = _players.duplicate()
 	_course.advance_level()
