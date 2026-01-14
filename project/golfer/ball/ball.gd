@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 signal stopped_moving
 
-const MAX_POWER := 10.0
+const MAX_POWER := 5.0
 const SLEEP_THRESHOLD := 0.03
 const COLLISION_ABSORPTION := 0.8
 
@@ -58,8 +58,8 @@ func turn(angle: float) -> void:
 
 
 func adjust_power(amount: float) -> void:
-	# TODO: Add safeguards
 	_power_percentage += amount
+	_power_percentage = clamp(_power_percentage, 0, MAX_POWER)
 	_power_indicator.mesh.size.y = _power_percentage
 
 
