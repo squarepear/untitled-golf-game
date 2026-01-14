@@ -31,11 +31,13 @@ func _input(event: InputEvent) -> void:
 		_ball.hit()
 		ball_hit.emit()
 		_can_move = false
+		_ball.set_aimer_visibility(false)
 
 
 func start_turn() -> void:
 	super()
 	_can_move = true
+	_ball.set_aimer_visibility(true)
 
 
 func end_turn(silent := false) -> void:

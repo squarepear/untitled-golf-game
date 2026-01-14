@@ -16,6 +16,10 @@ var _has_hit := false
 @onready var _sleep_timer: Timer = %SleepTimer
 
 
+func _ready() -> void:
+	set_aimer_visibility(false)
+
+
 func _process(_delta: float) -> void:
 	_aimer.global_position = global_position
 
@@ -57,3 +61,10 @@ func adjust_power(amount: float) -> void:
 	# TODO: Add safeguards
 	_power_percentage += amount
 	_power_indicator.mesh.size.y = _power_percentage
+
+
+func set_aimer_visibility(aimer_is_visible: bool) -> void:
+	if aimer_is_visible:
+		_aimer.show()
+	else:
+		_aimer.hide()
