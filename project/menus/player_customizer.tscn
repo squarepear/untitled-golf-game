@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwu22s2k4r6tn"]
 
 [ext_resource type="Script" uid="uid://duqxsahb1gumm" path="res://menus/player_customizer.gd" id="1_vcl4n"]
-[ext_resource type="Texture2D" uid="uid://skjemrqu45lu" path="res://icon.svg" id="2_6ksjn"]
+[ext_resource type="Texture2D" uid="uid://4bhq3ps2xb1d" path="res://menus/circle.png" id="2_vcl4n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yqv7"]
 
@@ -49,31 +49,37 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ptt2r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -77.5
-offset_right = 64.0
-offset_bottom = 77.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+offset_bottom = -281.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
 
 [node name="PlayerLabel" type="Label" parent="Panel/MarginContainer/Panel/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Player 1"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/Panel/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_6ksjn")
+texture = ExtResource("2_vcl4n")
+stretch_mode = 3
 
-[node name="ColorPicker" type="ColorPicker" parent="Panel/MarginContainer/Panel/VBoxContainer"]
-layout_mode = 2
+[node name="ColorPicker" type="ColorPicker" parent="Panel/MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 9.999998
+offset_top = 353.0
+offset_right = 308.0
+offset_bottom = 617.0
+scale = Vector2(0.8, 0.8)
 edit_alpha = false
 edit_intensity = false
 picker_shape = 2
@@ -84,4 +90,4 @@ sliders_visible = false
 hex_visible = false
 presets_visible = false
 
-[connection signal="color_changed" from="Panel/MarginContainer/Panel/VBoxContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="color_changed" from="Panel/MarginContainer/Panel/ColorPicker" to="." method="_on_color_picker_color_changed"]

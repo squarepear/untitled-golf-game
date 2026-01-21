@@ -15,7 +15,10 @@ func _on_color_picker_color_changed(color: Color) -> void:
 
 func set_player_name(player_number) -> void:
 	_number = int(player_number)
-	_player_label.text = "Player " + str(_number + 1)
+	if _number == PlayerInfo.HOLE_PLAYER:
+		_player_label.text = "Hole"
+	else:
+		_player_label.text = "Ball"
 
 
 func get_color() -> Color:
