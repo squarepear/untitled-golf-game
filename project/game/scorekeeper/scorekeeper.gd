@@ -35,6 +35,10 @@ func complete_level(player: Controller = null):
 	updated.emit()
 
 
+func get_players() -> Array[Controller]:
+	return _scores.keys()
+
+
 func get_scores() -> Array[LevelScores]:
 	return _scores.values()
 

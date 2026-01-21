@@ -26,10 +26,11 @@ func _initialize_containers() -> void:
 	for level in _scorekeeper.get_course().get_levels():
 		_create_par_square(level.get_par())
 
-	for scores in _scorekeeper.get_scores():
-		_create_player_name("Player X")
-		for i in range(_score_container.columns):
-			_create_score_square(scores.scores[i])
+	for i in _scorekeeper.get_scores().size():
+		var scores := _scorekeeper.get_scores()[i]
+		_create_player_name(_scorekeeper.get_players()[i].name)
+		for j in range(_score_container.columns):
+			_create_score_square(scores.scores[j])
 		_create_total_score_square(scores.course_score())
 
 
