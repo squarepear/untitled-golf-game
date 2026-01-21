@@ -43,6 +43,22 @@ func get_course() -> Course:
 	return _course
 
 
+func get_winner() -> Controller:
+	var scores: Array
+	for player in _scores.keys():
+		scores.append({
+			"player": player, 
+			"score": _scores[player].course_score()
+			})
+
+	scores.sort_custom(
+		func(a,b):
+			return a.score < b.score
+	)
+
+	return scores[0].player
+
+
 class LevelScores:
 	var pars: Array[int] = []
 	var scores: Array[int] = []
