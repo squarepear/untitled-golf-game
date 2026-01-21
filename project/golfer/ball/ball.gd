@@ -14,6 +14,7 @@ var _has_hit := false
 @onready var _pivot: Node3D = %Pivot
 @onready var _power_indicator: MeshInstance3D = %PowerIndicator
 @onready var _sleep_timer: Timer = %SleepTimer
+@onready var _mesh_instance_3d: MeshInstance3D = %MeshInstance3D
 
 
 func _ready() -> void:
@@ -74,3 +75,7 @@ func set_aimer_visibility(aimer_is_visible: bool) -> void:
 		_aimer.show()
 	else:
 		_aimer.hide()
+
+
+func set_color(new_color) -> void:
+	_mesh_instance_3d.mesh.material.albedo_color = new_color

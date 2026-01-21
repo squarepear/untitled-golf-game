@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://co0frd5tjlwxo"]
+[gd_scene load_steps=7 format=3 uid="uid://co0frd5tjlwxo"]
 
 [ext_resource type="Script" uid="uid://du0kut2ilulyc" path="res://golfer/ball/ball.gd" id="1_44stc"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7qh3"]
+resource_local_to_scene = true
+
 [sub_resource type="SphereMesh" id="SphereMesh_6ejj7"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_t7qh3")
 radius = 0.03
 height = 0.06
 
@@ -22,6 +27,7 @@ collision_layer = 2
 script = ExtResource("1_44stc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 mesh = SubResource("SphereMesh_6ejj7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

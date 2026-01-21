@@ -16,8 +16,10 @@ func _ready() -> void:
 			new_player = HoleController.new()
 		else:
 			new_player = BallController.new()
+
 		_players.append(new_player)
 		add_child(new_player)
+		new_player.set_color(PlayerInfo.colors[player])
 
 	_turn_order = _players.duplicate()
 
@@ -99,6 +101,7 @@ func _spawn_balls() -> void:
 		add_child(ball)
 		ball.global_position = positions[index]
 		player.set_target(ball)
+		ball.set_color(player.get_color())
 
 		index += 1
 
@@ -118,5 +121,6 @@ func _spawn_hole() -> void:
 	var hole := preload("res://hole/hole.tscn").instantiate()
 	add_child(hole)
 	hole.global_position = _course.get_current_level().get_hole_spawn_position()
+	hole.set_color(hole_controller.get_color())
 	hole_controller.set_target(hole)
 	hole.ball_entered.connect(_on_ball_entered_hole)

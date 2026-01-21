@@ -4,6 +4,7 @@ extends Node
 signal turn_started
 signal turn_ended
 
+var _color: Color
 var _is_active: bool = false
 
 
@@ -25,8 +26,16 @@ func end_turn(silent := false) -> void:
 		turn_ended.emit()
 
 
+func set_color(new_color: Color) -> void:
+	_color = new_color
+
+
 func set_target(_target) -> void:
 	pass
+
+
+func get_color() -> Color:
+	return _color
 
 
 func get_target() -> Node3D:
