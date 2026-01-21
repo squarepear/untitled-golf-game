@@ -7,12 +7,7 @@ var players: int = 2
 var colors: Array[Color] = [Color.WHITE, Color.WHITE]
 
 
-func _ready() -> void:
-	print(colors)
-
-
 func add_player() -> void:
 	if players < 4:
 		players += 1
 		colors.append(Color.WHITE)
-		print(colors)

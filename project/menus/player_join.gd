@@ -16,7 +16,6 @@ func _on_button_pressed() -> void:
 
 
 func _create_player_customizer(n) -> void:
-	print("???")
 	var _player_customizer: PlayerCustomizer = PLAYER_CUSTOMIZER.instantiate()
 	_h_box_container.add_child(_player_customizer)
 	_player_customizer.set_player_name(str(n))
