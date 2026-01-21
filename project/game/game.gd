@@ -77,13 +77,20 @@ func _level_complete() -> void:
 	_scorekeeper.complete_level()
 
 	_turn_order = _players.duplicate()
-	_course.advance_level()
+
+	if not _course.advance_level():
+		_game_over()
+		return
 
 	_spawn_balls()
 	_spawn_hole()
 
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
+
+
+func _game_over() -> void:
+	_hud.show_game_over()
 
 
 func _spawn_balls() -> void:

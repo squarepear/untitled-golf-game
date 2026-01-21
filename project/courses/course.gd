@@ -16,9 +16,14 @@ func _ready() -> void:
 		_levels.append(level)
 
 
-func advance_level() -> void:
+func advance_level() -> bool:
 	_current_level += 1
+
+	if _current_level == _levels.size():
+		return false
+
 	level_advanced.emit(_current_level)
+	return true
 
 
 func get_current_level() -> Level:

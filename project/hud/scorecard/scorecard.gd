@@ -22,6 +22,7 @@ func set_scorekeeper(scorekeeper: Scorekeeper) -> void:
 func _initialize_containers() -> void:
 	_clear_containers()
 
+	_score_container.columns = _scorekeeper.get_course().get_levels().size()
 	for level in _scorekeeper.get_course().get_levels():
 		_create_par_square(level.get_par())
 
