@@ -1,7 +1,6 @@
 extends Node3D
 
-@export var _turn_order: Array[Controller]
-
+var _turn_order: Array[Controller]
 var _players: Array[Controller]
 
 @onready var _course: Course = %Course
@@ -9,8 +8,19 @@ var _players: Array[Controller]
 @onready var _hud := %Hud
 @onready var _scorekeeper: Scorekeeper = %Scorekeeper
 
+
 func _ready() -> void:
-	_players = _turn_order.duplicate()
+	for player in PlayerInfo.players:
+		var new_player: Controller
+		if player == PlayerInfo.HOLE_PLAYER:
+			new_player = HoleController.new()
+		else:
+			new_player = BallController.new()
+		_players.append(new_player)
+		add_child(new_player)
+
+	_turn_order = _players.duplicate()
+
 	_spawn_balls()
 	_spawn_hole()
 
