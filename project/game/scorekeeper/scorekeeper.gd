@@ -4,10 +4,12 @@ extends Node
 signal updated
 
 var _current_level := 0
+var _course: Course
 var _scores: Dictionary[Controller, LevelScores]
 
 
 func set_up(course: Course, players: Array[Controller]) -> void:
+	_course = course
 	for player in players:
 		if player is BallController:
 			player.ball_hit.connect(increment_level_score.bind(player))
@@ -35,6 +37,10 @@ func complete_level(player: Controller = null):
 
 func get_scores() -> Array[LevelScores]:
 	return _scores.values()
+
+
+func get_course() -> Course:
+	return _course
 
 
 class LevelScores:
