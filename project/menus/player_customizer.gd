@@ -1,5 +1,5 @@
 class_name PlayerCustomizer
-extends Control
+extends PanelContainer
 
 var _number: int
 var _current_color: Color = Color.WHITE
@@ -13,7 +13,7 @@ func _on_color_picker_color_changed(color: Color) -> void:
 	PlayerInfo.colors[_number] = _current_color
 
 
-func set_player_name(player_number) -> void:
+func set_player_name(player_number: String) -> void:
 	_number = int(player_number)
 	if _number == PlayerInfo.HOLE_PLAYER:
 		_player_label.text = "Hole"
