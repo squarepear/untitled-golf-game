@@ -5,7 +5,7 @@ signal stopped_moving
 
 const MAX_POWER := 5.0
 const SLEEP_THRESHOLD := 0.03
-const COLLISION_ABSORPTION := 0.8
+const COLLISION_ABSORPTION := 0.4
 
 var _power_percentage := 0.5
 var _has_hit := false
@@ -40,7 +40,8 @@ func _physics_process(delta: float) -> void:
 	while collision:
 		var normal := collision.get_normal()
 		var remainder := collision.get_remainder()
-		velocity = velocity.bounce(normal) * COLLISION_ABSORPTION
+		var grazing_angle := normal.dot(velocity.normalized())
+		velocity = velocity.bounce(normal) * (1.0 - abs(COLLISION_ABSORPTION * grazing_angle))
 
 		if remainder.length() < 0.01:
 			break
