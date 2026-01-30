@@ -20,6 +20,7 @@ func _ready() -> void:
 		_players.append(new_player)
 		add_child(new_player)
 		new_player.set_color(PlayerInfo.colors[player])
+		new_player.set_name(PlayerInfo.names[player])
 
 	_turn_order = _players.duplicate()
 

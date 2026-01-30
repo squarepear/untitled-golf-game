@@ -69,4 +69,13 @@ sliders_visible = false
 hex_visible = false
 presets_visible = false
 
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.82978106, 0.00054349244, 0.82977545, 0.6)
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Your Name Here"
+
 [connection signal="color_changed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/CenterContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="text_changed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
