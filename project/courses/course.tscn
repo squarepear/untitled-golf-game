@@ -7514,6 +7514,7 @@ unique_name_in_owner = true
 [node name="Level0" type="Node3D" parent="Levels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08297777, 0, -0.7102635)
 script = ExtResource("1_ju1gv")
+_par = 1
 metadata/_custom_type_script = "uid://d4fdhvwtksbwc"
 
 [node name="GridMap" type="GridMap" parent="Levels/Level0"]
@@ -7522,14 +7523,14 @@ cell_size = Vector3(1, 1, 1)
 cell_center_y = false
 collision_mask = 7
 data = {
-"cells": PackedInt32Array(65535, 65535, 655390, 0, 65535, 655388, 0, 0, 655390, 65535, 0, 655388, 0, 3, 655459, 0, 2, 655478, 0, 1, 655388, 65535, 1, 655390, 1, 1, 655390, 1, 0, 655388, 1, 65535, 655390, 2, 2, 42, 65534, 2, 1441834, 65534, 65534, 655402, 2, 65534, 1048618, 1, 65534, 1048621, 0, 65534, 1048621, 65535, 65534, 1048621, 65534, 65535, 655405, 65534, 0, 655405, 65534, 1, 655405, 2, 65535, 23, 2, 0, 1048606, 2, 1, 1441815, 1, 2, 1441837, 65535, 2, 1441837, 3, 0, 1441910, 4, 0, 1441817, 5, 0, 1048585, 0, 4, 9, 3, 1, 42, 3, 65535, 1048618)
+"cells": PackedInt32Array(5, 0, 1048585, 4, 0, 1441891, 3, 0, 1441891, 2, 0, 1441801)
 }
 
 [node name="SpawnPatch" parent="Levels/Level0" instance=ExtResource("4_vevi3")]
-transform = Transform3D(0.48480958, 0, 0.8746197, 0, 1, 0, -0.8746197, 0, 0.48480958, 5.2140455, 0.10966697, 0.52511525)
+transform = Transform3D(0.48480958, 0, 0.8746197, 0, 1, 0, -0.8746197, 0, 0.48480958, 5.5, 0.11, 0.5)
 
 [node name="HoleSpawn" type="Marker3D" parent="Levels/Level0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.11, 4.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.11, 0.5)
 
 [node name="Level1" type="Node3D" parent="Levels"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 10.984024)
