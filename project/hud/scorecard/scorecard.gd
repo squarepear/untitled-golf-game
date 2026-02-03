@@ -1,5 +1,5 @@
 class_name Scorecard
-extends Control
+extends PanelContainer
 
 const _par_square_scene := preload("res://hud/scorecard/par_score_square.tscn")
 const _score_square_scene := preload("res://hud/scorecard/score_square.tscn")
@@ -17,6 +17,10 @@ func set_scorekeeper(scorekeeper: Scorekeeper) -> void:
 	_scorekeeper.updated.connect(_update)
 
 	_initialize_containers.call_deferred()
+
+
+func get_scorekeeper() -> Scorekeeper:
+	return _scorekeeper
 
 
 func _initialize_containers() -> void:

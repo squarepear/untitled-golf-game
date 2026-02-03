@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c82rvsnroti0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrvmb"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xaf5n"]
+color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc0n1"]
+bg_color = Color(0.9268064, 0.9268064, 0.92680633, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_q6wux"]
+color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+thickness = 2
+vertical = true
+
+[resource]
+default_font_size = 32
+Button/colors/font_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_hrvmb")
+GridContainer/constants/h_separation = 12
+GridContainer/constants/v_separation = 8
+HBoxContainer/constants/separation = 8
+HSeparator/styles/separator = SubResource("StyleBoxLine_xaf5n")
+Label/colors/font_color = Color(0.05, 0.05, 0.05, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tc0n1")
+VBoxContainer/constants/separation = 8
+VSeparator/styles/separator = SubResource("StyleBoxLine_q6wux")

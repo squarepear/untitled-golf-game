@@ -8,7 +8,6 @@ var _scorekeeper: Scorekeeper
 @onready var _time_left: HBoxContainer = %TimeLeft
 @onready var _scorecard: Scorecard = %Scorecard
 @onready var _game_over: Control = %GameOver
-@onready var _winning_player_label: Label = %WinningPlayerLabel
 
 
 
@@ -32,5 +31,4 @@ func set_scorekeeper(scorekeeper: Scorekeeper) -> void:
 
 
 func show_game_over() -> void:
-	_winning_player_label.text = _scorekeeper.get_winner().name
-	_game_over.show()
+	_game_over.activate()

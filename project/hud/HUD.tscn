@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://djd2yf6831xmo"]
+[gd_scene load_steps=4 format=3 uid="uid://djd2yf6831xmo"]
 
 [ext_resource type="Script" uid="uid://gmshy1w5u0l0" path="res://hud/hud.gd" id="1_g1j8k"]
 [ext_resource type="PackedScene" uid="uid://bog4pyusw53tc" path="res://hud/scorecard/scorecard.tscn" id="2_xx08g"]
+[ext_resource type="PackedScene" uid="uid://cgvyuc6pbclql" path="res://hud/game_over/game_over.tscn" id="3_akegq"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -44,52 +45,19 @@ text = "5"
 [node name="Scorecard" parent="." instance=ExtResource("2_xx08g")]
 unique_name_in_owner = true
 layout_mode = 1
-
-[node name="GameOver" type="Control" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -502.0
+offset_top = -248.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="Label" type="Label" parent="GameOver"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = -79.5
-offset_right = 91.5
-offset_bottom = -34.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "Game Over!"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameOver"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.5
-offset_top = -20.0
-offset_right = 36.5
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="WinnerLabel" type="Label" parent="GameOver/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "WINNER: "
-
-[node name="WinningPlayerLabel" type="Label" parent="GameOver/HBoxContainer"]
+[node name="GameOver" parent="." node_paths=PackedStringArray("_scorecard") instance=ExtResource("3_akegq")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+_scorecard = NodePath("../Scorecard")

@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwu22s2k4r6tn"]
+[gd_scene load_steps=4 format=3 uid="uid://dwu22s2k4r6tn"]
 
 [ext_resource type="Script" uid="uid://duqxsahb1gumm" path="res://menus/player_customizer.gd" id="1_vcl4n"]
 [ext_resource type="Texture2D" uid="uid://4bhq3ps2xb1d" path="res://menus/circle.png" id="2_vcl4n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yqv7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptt2r"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="PlayerCustomizer" type="PanelContainer"]
 custom_minimum_size = Vector2(288, 648)
@@ -27,7 +24,6 @@ theme_override_constants/margin_bottom = 16
 
 [node name="Panel" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ptt2r")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
 layout_mode = 2
