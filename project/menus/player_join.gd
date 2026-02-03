@@ -23,3 +23,11 @@ func _create_player_customizer(n) -> void:
 
 func _on_start_game_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://game/game.tscn")
+
+
+func _on_delete_player_button_pressed() -> void:
+	if PlayerInfo.players > 2:
+		PlayerInfo.delete_player()
+		var current_player_customizer = _h_box_container.get_child(PlayerInfo.players - 1)
+		_h_box_container.remove_child(current_player_customizer)
+		current_player_customizer.queue_free()
