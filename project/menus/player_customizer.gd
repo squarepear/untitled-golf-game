@@ -6,7 +6,6 @@ var _current_color: Color = Color.WHITE
 var _current_name: String
 @onready var _texture_rect: TextureRect = %TextureRect
 @onready var _player_label: Label = %PlayerLabel
-@onready var _line_edit: LineEdit = %LineEdit
 
 
 func _on_color_picker_color_changed(color: Color) -> void:
