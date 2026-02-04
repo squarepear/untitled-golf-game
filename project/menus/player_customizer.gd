@@ -27,10 +27,6 @@ func get_color() -> Color:
 	return _current_color
 
 
-func _on_button_pressed() -> void:
-	PlayerInfo.add_player()
-
-
 func _on_text_edit_text_changed() -> void:
 	_current_name = _text_edit.text
 	PlayerInfo.names[_number] = _current_name
