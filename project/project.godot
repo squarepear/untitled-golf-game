@@ -28,6 +28,7 @@ window/stretch/mode="canvas_items"
 [gui]
 
 theme/custom="uid://c82rvsnroti0w"
+theme/custom_font="uid://e2308lg610mc"
 
 [input]
 
