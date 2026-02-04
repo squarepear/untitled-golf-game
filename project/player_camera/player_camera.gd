@@ -10,10 +10,6 @@ static var _main: PlayerCamera
 @onready var _camera: Camera3D = %Camera3D
 
 
-static func main() -> PlayerCamera:
-	return _main
-
-
 func _ready() -> void:
 	if _main:
 		_main.queue_free()
@@ -45,6 +41,21 @@ func get_dir(dir: Vector2) -> Vector2:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		lock()
 	elif event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		unlock()
+
+
+func lock() -> void:
+	if not _target:
+		return
+
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func unlock() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+static func main() -> PlayerCamera:
+	return _main

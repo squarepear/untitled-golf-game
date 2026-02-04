@@ -92,6 +92,7 @@ func _level_complete() -> void:
 
 func _game_over() -> void:
 	_hud.show_game_over()
+	_camera.unlock()
 
 
 func _spawn_balls() -> void:
