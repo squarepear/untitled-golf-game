@@ -70,12 +70,6 @@ theme_override_font_sizes/font_size = 36
 text = "Select your color..."
 horizontal_alignment = 1
 
-[node name="TextureRect" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=674836054]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_3vfd8")
-
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1563566551]
 layout_mode = 2
 
@@ -83,13 +77,18 @@ layout_mode = 2
 layout_mode = 2
 edit_alpha = false
 edit_intensity = false
-picker_shape = 2
 can_add_swatches = false
 sampler_visible = false
 color_modes_visible = false
 sliders_visible = false
 hex_visible = false
 presets_visible = false
+
+[node name="TextureRect" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=674836054]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3vfd8")
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=319579311]
 unique_name_in_owner = true

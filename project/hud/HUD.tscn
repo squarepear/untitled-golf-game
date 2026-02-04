@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://djd2yf6831xmo"]
+[gd_scene format=3 uid="uid://djd2yf6831xmo"]
 
 [ext_resource type="Script" uid="uid://gmshy1w5u0l0" path="res://hud/hud.gd" id="1_g1j8k"]
 [ext_resource type="PackedScene" uid="uid://bog4pyusw53tc" path="res://hud/scorecard/scorecard.tscn" id="2_xx08g"]
 [ext_resource type="PackedScene" uid="uid://cgvyuc6pbclql" path="res://hud/game_over/game_over.tscn" id="3_akegq"]
 
-[node name="HUD" type="Control"]
+[node name="HUD" type="Control" unique_id=1072409411]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,36 +13,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g1j8k")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=195933931]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.5
+offset_right = 104.5
+offset_bottom = 88.0
+grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1757270092]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1734513523]
 layout_mode = 2
 text = "Current Player:"
+horizontal_alignment = 1
 
-[node name="CurrentPlayerLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="CurrentPlayerLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1883381527]
 unique_name_in_owner = true
 layout_mode = 2
+horizontal_alignment = 1
 
-[node name="TimeLeft" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TimeLeft" type="HBoxContainer" parent="VBoxContainer" unique_id=475581529]
 unique_name_in_owner = true
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/TimeLeft"]
+[node name="Label" type="Label" parent="VBoxContainer/TimeLeft" unique_id=763787792]
 layout_mode = 2
 text = "Time left:"
+horizontal_alignment = 1
 
-[node name="TimeLeftLabel" type="Label" parent="VBoxContainer/TimeLeft"]
+[node name="TimeLeftLabel" type="Label" parent="VBoxContainer/TimeLeft" unique_id=167132017]
 unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
-[node name="Scorecard" parent="." instance=ExtResource("2_xx08g")]
+[node name="Scorecard" parent="." unique_id=939714126 instance=ExtResource("2_xx08g")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -57,7 +67,7 @@ offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="GameOver" parent="." node_paths=PackedStringArray("_scorecard") instance=ExtResource("3_akegq")]
+[node name="GameOver" parent="." unique_id=1526001602 node_paths=PackedStringArray("_scorecard") instance=ExtResource("3_akegq")]
 unique_name_in_owner = true
 layout_mode = 1
 _scorecard = NodePath("../Scorecard")

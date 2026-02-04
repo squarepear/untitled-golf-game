@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 
 func set_current_player(current_player: Controller) -> void:
 	_current_player = current_player
-	_current_player_label.text = str(_current_player)
+	_current_player_label.text = _current_player.name
 	if _current_player is HoleController:
 		_time_left.show()
 	else:
