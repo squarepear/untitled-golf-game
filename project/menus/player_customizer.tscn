@@ -1,56 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwu22s2k4r6tn"]
+[gd_scene format=3 uid="uid://dwu22s2k4r6tn"]
 
 [ext_resource type="Script" uid="uid://duqxsahb1gumm" path="res://menus/player_customizer.gd" id="1_vcl4n"]
-[ext_resource type="Texture2D" uid="uid://4bhq3ps2xb1d" path="res://menus/circle.png" id="2_vcl4n"]
 
-[node name="PlayerCustomizer" type="PanelContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcl4n"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vfd8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="PlayerCustomizer" type="PanelContainer" unique_id=805388719]
 custom_minimum_size = Vector2(288, 648)
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 378.0
+offset_right = 912.0
 grow_vertical = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcl4n")
 script = ExtResource("1_vcl4n")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=674501050]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer"]
+[node name="Panel" type="PanelContainer" parent="MarginContainer" unique_id=287605419]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=260128624]
 layout_mode = 2
-theme_override_constants/margin_left = 24
+theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
+theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1652922160]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="PlayerLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="PlayerLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=283744228]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Player 1"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=912786355]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=243483413]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Select your color..."
+horizontal_alignment = 1
+
+[node name="TextureRect" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=674836054]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-texture = ExtResource("2_vcl4n")
-stretch_mode = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3vfd8")
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1563566551]
 layout_mode = 2
 
-[node name="ColorPicker" type="ColorPicker" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/CenterContainer"]
+[node name="ColorPicker" type="ColorPicker" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/CenterContainer" unique_id=870751132]
 layout_mode = 2
 edit_alpha = false
 edit_intensity = false
@@ -62,7 +91,7 @@ sliders_visible = false
 hex_visible = false
 presets_visible = false
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=319579311]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -72,5 +101,5 @@ placeholder_text = "Enter your name..."
 alignment = 1
 max_length = 16
 
-[connection signal="color_changed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/CenterContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="color_changed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/CenterContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
 [connection signal="text_changed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

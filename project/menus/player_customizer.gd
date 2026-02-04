@@ -4,7 +4,7 @@ extends PanelContainer
 var _number: int
 var _current_color: Color = Color.WHITE
 var _current_name: String
-@onready var _texture_rect: TextureRect = %TextureRect
+@onready var _texture_rect: Panel = %TextureRect
 @onready var _player_label: Label = %PlayerLabel
 
 

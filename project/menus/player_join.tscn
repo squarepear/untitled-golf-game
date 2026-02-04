@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://vkp4fgrifb0k"]
+[gd_scene format=3 uid="uid://vkp4fgrifb0k"]
 
 [ext_resource type="Script" uid="uid://y0n7fcopk6vo" path="res://menus/player_join.gd" id="1_i3t51"]
 
-[node name="PlayerJoin" type="Control"]
+[node name="PlayerJoin" type="Control" unique_id=616633314]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i3t51")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=372197210]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,25 +20,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="DeletePlayerButton" type="Button" parent="HBoxContainer2"]
+[node name="DeletePlayerButton" type="Button" parent="HBoxContainer2" unique_id=2106976818]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " - "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2" unique_id=429682095]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="AddPlayerButton" type="Button" parent="HBoxContainer2"]
+[node name="AddPlayerButton" type="Button" parent="HBoxContainer2" unique_id=1320899250]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " + "
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="StartGameButton" type="Button" parent="." unique_id=731303091]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
