@@ -16,3 +16,11 @@ func activate() -> void:
 	_scorecard.get_parent().remove_child(_scorecard)
 	_scorecard_container.add_child(_scorecard)
 	show()
+
+
+func _on_play_again_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://game/game.tscn")
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
