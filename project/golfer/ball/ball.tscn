@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://co0frd5tjlwxo"]
+[gd_scene format=3 uid="uid://co0frd5tjlwxo"]
 
 [ext_resource type="Script" uid="uid://du0kut2ilulyc" path="res://golfer/ball/ball.gd" id="1_44stc"]
 
@@ -22,30 +22,43 @@ material = SubResource("StandardMaterial3D_44stc")
 size = Vector2(0.075, 0.575)
 center_offset = Vector3(0, 0, 0.125)
 
-[node name="Ball" type="CharacterBody3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i07ra"]
+albedo_color = Color(0, 0.4117647, 0.2901961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_35vmt"]
+material = SubResource("StandardMaterial3D_i07ra")
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.02
+
+[node name="Ball" type="CharacterBody3D" unique_id=292715658]
 collision_layer = 2
 script = ExtResource("1_44stc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=846644150]
 unique_name_in_owner = true
 mesh = SubResource("SphereMesh_6ejj7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1668893610]
 shape = SubResource("SphereShape3D_44stc")
 
-[node name="Aimer" type="Node3D" parent="."]
+[node name="Aimer" type="Node3D" parent="." unique_id=996697112]
 unique_name_in_owner = true
 top_level = true
 
-[node name="Pivot" type="Node3D" parent="Aimer"]
+[node name="Pivot" type="Node3D" parent="Aimer" unique_id=1137782968]
 unique_name_in_owner = true
 
-[node name="PowerIndicator" type="MeshInstance3D" parent="Aimer/Pivot"]
+[node name="PowerIndicator" type="MeshInstance3D" parent="Aimer/Pivot" unique_id=677962811]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16)
 mesh = SubResource("PlaneMesh_44stc")
 skeleton = NodePath("../../..")
 
-[node name="SleepTimer" type="Timer" parent="."]
+[node name="SleepTimer" type="Timer" parent="." unique_id=1476470389]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="ShadowMesh" type="MeshInstance3D" parent="." unique_id=461754567]
+transform = Transform3D(1.0078266, 0, 0, 0, 0.017319173, 0, 0, 0, 1.0078266, 0, -0.027726397, 0)
+mesh = SubResource("CylinderMesh_35vmt")
