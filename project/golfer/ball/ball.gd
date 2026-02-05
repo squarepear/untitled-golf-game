@@ -51,6 +51,7 @@ func _physics_process(delta: float) -> void:
 
 
 func hit() -> void:
+	SFX.play_ball_hit()
 	velocity = -_pivot.basis.z * _power_percentage * MAX_POWER
 	_has_hit = true
 	_sleep_timer.start()
