@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vkp4fgrifb0k"]
 
 [ext_resource type="Script" uid="uid://y0n7fcopk6vo" path="res://menus/player_join.gd" id="1_i3t51"]
+[ext_resource type="Texture2D" uid="uid://b5oh2ilcx4vls" path="res://hud/golf_background.png" id="2_i3t51"]
 
 [node name="PlayerJoin" type="Control" unique_id=616633314]
 layout_mode = 3
@@ -10,6 +11,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i3t51")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1567747361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i3t51")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=372197210]
 layout_mode = 1

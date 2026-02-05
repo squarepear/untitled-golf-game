@@ -3,7 +3,19 @@
 [ext_resource type="Script" uid="uid://duqxsahb1gumm" path="res://menus/player_customizer.gd" id="1_vcl4n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcl4n"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ksjn"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0.57254905)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -40,6 +52,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Panel" type="PanelContainer" parent="MarginContainer" unique_id=287605419]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ksjn")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=260128624]
 layout_mode = 2
@@ -86,7 +99,7 @@ presets_visible = false
 
 [node name="TextureRect" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=674836054]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 53.75)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3vfd8")
 
