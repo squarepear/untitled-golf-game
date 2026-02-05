@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://cfrpoidag3rr2"]
 
-[ext_resource type="AudioStream" uid="uid://bb8vymsg3g61d" path="res://sfx/beep.mp3" id="1_0ih7f"]
 [ext_resource type="Script" uid="uid://bj8og3loaqs2j" path="res://sfx/sfx.gd" id="1_x61o7"]
-[ext_resource type="AudioStream" uid="uid://b8ymsw3m2ukwi" path="res://sfx/putt-1.wav" id="3_ffahm"]
-[ext_resource type="AudioStream" uid="uid://bg846mca427vd" path="res://sfx/putt-2.wav" id="4_a2m83"]
-[ext_resource type="AudioStream" uid="uid://wmae7q16x80t" path="res://sfx/putt-3.wav" id="5_rg0p6"]
-[ext_resource type="AudioStream" uid="uid://cc5itlvywc33q" path="res://sfx/putt-4.wav" id="6_8rwud"]
-[ext_resource type="AudioStream" uid="uid://gfts53xe0568" path="res://sfx/putt-5.wav" id="7_p8kw4"]
-[ext_resource type="AudioStream" uid="uid://di1qbsgksprlk" path="res://sfx/putt-6.wav" id="8_ju0p8"]
-[ext_resource type="AudioStream" uid="uid://bgotlt32jyqik" path="res://sfx/putt-7.wav" id="9_migfp"]
+[ext_resource type="AudioStream" uid="uid://bb8vymsg3g61d" path="res://sfx/button/beep.mp3" id="2_8rwud"]
+[ext_resource type="AudioStream" uid="uid://b8ymsw3m2ukwi" path="res://sfx/hit/putt-1.wav" id="3_ffahm"]
+[ext_resource type="AudioStream" uid="uid://bg846mca427vd" path="res://sfx/hit/putt-2.wav" id="4_a2m83"]
+[ext_resource type="AudioStream" uid="uid://wmae7q16x80t" path="res://sfx/hit/putt-3.wav" id="5_rg0p6"]
+[ext_resource type="AudioStream" uid="uid://cc5itlvywc33q" path="res://sfx/hit/putt-4.wav" id="6_8rwud"]
+[ext_resource type="AudioStream" uid="uid://gfts53xe0568" path="res://sfx/hit/putt-5.wav" id="7_p8kw4"]
+[ext_resource type="AudioStream" uid="uid://di1qbsgksprlk" path="res://sfx/hit/putt-6.wav" id="8_ju0p8"]
+[ext_resource type="AudioStream" uid="uid://bgotlt32jyqik" path="res://sfx/hit/putt-7.wav" id="9_migfp"]
+[ext_resource type="AudioStream" uid="uid://tmtdgiqf263" path="res://sfx/in_hole/Golf_Ball_Landing.mp3" id="10_8rwud"]
+[ext_resource type="AudioStream" uid="uid://budr7xbjw3l0h" path="res://sfx/in_hole/Green_Drop.mp3" id="11_p8kw4"]
+[ext_resource type="AudioStream" uid="uid://bpe6nqaf2kxb8" path="res://sfx/in_hole/Hole_Plunge.mp3" id="12_ju0p8"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x61o7"]
 random_pitch = 1.0293022
 streams_count = 1
-stream_0/stream = ExtResource("1_0ih7f")
+stream_0/stream = ExtResource("2_8rwud")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q3aos"]
 random_pitch = 1.0472941
@@ -27,6 +30,14 @@ stream_4/stream = ExtResource("7_p8kw4")
 stream_5/stream = ExtResource("8_ju0p8")
 stream_6/stream = ExtResource("9_migfp")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_migfp"]
+random_pitch = 1.0472941
+random_volume_offset_db = 1.0
+streams_count = 3
+stream_0/stream = ExtResource("10_8rwud")
+stream_1/stream = ExtResource("11_p8kw4")
+stream_2/stream = ExtResource("12_ju0p8")
+
 [node name="SFX" type="Node" unique_id=722779934]
 script = ExtResource("1_x61o7")
 
@@ -38,3 +49,9 @@ max_polyphony = 3
 [node name="BallHitPlayer" type="AudioStreamPlayer" parent="." unique_id=965372109]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_q3aos")
+max_polyphony = 3
+
+[node name="BallInHolePlayer" type="AudioStreamPlayer" parent="." unique_id=525469468]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_migfp")
+max_polyphony = 3

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bg846mca427vd"
-path="res://.godot/imported/putt-2.wav-0055639b380529754c94bc4ff447a87e.sample"
+uid="uid://bgotlt32jyqik"
+path="res://.godot/imported/putt-7.wav-54f72de4d03cdd898c10679049613551.sample"
 
 [deps]
 
-source_file="res://sfx/putt-2.wav"
-dest_files=["res://.godot/imported/putt-2.wav-0055639b380529754c94bc4ff447a87e.sample"]
+source_file="res://sfx/hit/putt-7.wav"
+dest_files=["res://.godot/imported/putt-7.wav-54f72de4d03cdd898c10679049613551.sample"]
 
 [params]
 

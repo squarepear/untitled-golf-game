@@ -25,4 +25,5 @@ func _on_ball_area_body_entered(body: Node3D) -> void:
 	if body is not Ball:
 		return
 
+	SFX.play_ball_enter_hole()
 	ball_entered.emit(body)
