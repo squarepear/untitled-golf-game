@@ -1,12 +1,21 @@
-extends Control
+extends Node3D
 
 const PLAYER_CUSTOMIZER = preload("res://menus/player_customizer.tscn")
+
+var _camera_rotation_speed: float = 0.05
+
 @onready var _h_box_container: HBoxContainer = %HBoxContainer
+@onready var _camera_3d: Camera3D = %Camera3D
+
 
 
 func _ready() -> void:
 	for n in PlayerInfo.players:
 		_create_player_customizer(n)
+
+
+func _process(delta: float) -> void:
+	_camera_3d.rotation.y += _camera_rotation_speed * delta
 
 
 func _on_button_pressed() -> void:
