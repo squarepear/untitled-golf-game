@@ -127,17 +127,67 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_jjmb0")
 
-[node name="Label" type="Label" parent="Credits/Panel" unique_id=2037004279]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/Panel" unique_id=1989776457]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Credits/Panel/VBoxContainer" unique_id=2037004279]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "Developers
-Jadi Miller & Jeffrey Harmon
-
-Third Party Assets
-Kenney Golf"
+theme_override_font_sizes/font_size = 80
+text = "Developers"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Jadi" type="LinkButton" parent="Credits/Panel/VBoxContainer" unique_id=331547996]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.101960786, 0.2784314, 0.48235294, 1)
+theme_override_font_sizes/font_size = 52
+text = "Jadi Miller"
+uri = "https://prismatoad.itch.io/"
+
+[node name="Jeffrey" type="LinkButton" parent="Credits/Panel/VBoxContainer" unique_id=2016143644]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.101960786, 0.2784314, 0.48235294, 1)
+theme_override_font_sizes/font_size = 52
+text = "Jeffrey Harmon"
+uri = "https://jeffreyharmon.dev/"
+
+[node name="Label2" type="Label" parent="Credits/Panel/VBoxContainer" unique_id=1430509099]
+layout_mode = 2
+
+[node name="ThirdPartyAssets" type="Label" parent="Credits/Panel/VBoxContainer" unique_id=842687622]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Third Party Assets"
+horizontal_alignment = 1
+
+[node name="Skybox" type="LinkButton" parent="Credits/Panel/VBoxContainer" unique_id=1353026318]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.101960786, 0.2784314, 0.48235294, 1)
+theme_override_font_sizes/font_size = 52
+text = "Skybox by Jettelly"
+uri = "https://jettelly.com/blog/more-skyboxes-this-time-blue-sky"
+
+[node name="Minigolf" type="LinkButton" parent="Credits/Panel/VBoxContainer" unique_id=168388036]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.101960786, 0.2784314, 0.48235294, 1)
+theme_override_font_sizes/font_size = 52
+text = "Minigolf Kit by Kenney.nl"
+uri = "https://kenney.nl/assets/minigolf-kit"
 
 [node name="CloseButton" type="Button" parent="Credits" unique_id=1546675870]
 anchors_preset = 1
