@@ -85,6 +85,7 @@ func _level_complete() -> void:
 
 	_spawn_balls()
 	_spawn_hole()
+	_hud.set_current_player(_turn_order[0])
 
 	_turn_order[0].start_turn()
 	_camera.set_target(_turn_order[0].get_target())
