@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://6gf1dli370tp" path="res://player_camera/player_camera.tscn" id="7_u5opy"]
 [ext_resource type="PackedScene" uid="uid://qp7aqwt0frih" path="res://courses/course.tscn" id="7_y36n6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxrkv"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0.8352941)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Game" type="Node3D" unique_id=1782191139]
 script = ExtResource("1_vasa2")
 
@@ -24,3 +31,58 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("7_l8g03")
 metadata/_custom_type_script = "uid://gcvhyr2oydx1"
+
+[node name="Escape" type="CanvasLayer" parent="." unique_id=358716280]
+unique_name_in_owner = true
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="Escape" unique_id=375632882]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -588.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxrkv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Escape/PanelContainer" unique_id=197843166]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Escape/PanelContainer/MarginContainer" unique_id=1789364819]
+layout_mode = 2
+
+[node name="Scoring" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1787081753]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Scoring"
+
+[node name="ScoringParagraph" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1913643422]
+layout_mode = 2
+text = "Balls are scored by normal golf rules.
+ Number of strokes - Par
+Holes receive points based on the final score of the ball. 
+- If a ball finishes under par, the hole gains 1 point.
+- If a ball finishes over par, the hole will lose 1 point.
+- If a ball finishes at par, no points are awarded or deducted.
+
+The player with the fewest points at the end of the game wins!"
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1332618883]
+layout_mode = 2
+
+[node name="Controls" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1157869008]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Controls"
+
+[node name="ScoringParagraph2" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1715879761]
+layout_mode = 2
+text = "The ball angle moves along with the camera. Use your mouse to aim the ball. Press the Spacebar to shoot the ball.
+
+The hole moves using WASD. The camera can be controlled using the mouse. The hole will have 5 seconds to finish its turn once it begins moving."
+autowrap_mode = 3
