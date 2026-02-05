@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://y0n7fcopk6vo" path="res://menus/player_join.gd" id="1_i3t51"]
 [ext_resource type="PackedScene" uid="uid://qp7aqwt0frih" path="res://courses/course.tscn" id="2_i3t51"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/sound_button.gd" id="3_jjmb0"]
-=======
 [ext_resource type="Theme" uid="uid://c82rvsnroti0w" path="res://hud/hud_theme.tres" id="3_jjmb0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjmb0"]
@@ -13,7 +10,6 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
->>>>>>> Stashed changes
 
 [node name="PlayerJoin" type="Node3D" unique_id=118101996]
 script = ExtResource("1_i3t51")
@@ -37,16 +33,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-<<<<<<< Updated upstream
-[node name="DeletePlayerButton" type="Button" parent="CanvasLayer/HBoxContainer2" unique_id=702030992]
-=======
 [node name="DeletePlayerButton" type="Button" parent="PlayerJoin/HBoxContainer2" unique_id=2106976818]
->>>>>>> Stashed changes
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " - "
-script = ExtResource("3_jjmb0")
 metadata/_custom_type_script = "uid://f3yuqap0adlw"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerJoin/HBoxContainer2" unique_id=429682095]
@@ -55,23 +46,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-<<<<<<< Updated upstream
-[node name="AddPlayerButton" type="Button" parent="CanvasLayer/HBoxContainer2" unique_id=789062009]
-=======
 [node name="AddPlayerButton" type="Button" parent="PlayerJoin/HBoxContainer2" unique_id=1320899250]
->>>>>>> Stashed changes
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " + "
-script = ExtResource("3_jjmb0")
 metadata/_custom_type_script = "uid://f3yuqap0adlw"
 
-<<<<<<< Updated upstream
-[node name="StartGameButton" type="Button" parent="CanvasLayer" unique_id=1594098037]
-=======
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerJoin" unique_id=1631869736]
->>>>>>> Stashed changes
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -93,7 +75,6 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = " Start Game "
-script = ExtResource("3_jjmb0")
 metadata/_custom_type_script = "uid://f3yuqap0adlw"
 
 [node name="OpeningScreen" type="CanvasLayer" parent="." unique_id=1732388277]
