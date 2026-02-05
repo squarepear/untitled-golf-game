@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfrpoidag3rr2"]
+
+[ext_resource type="AudioStream" uid="uid://bb8vymsg3g61d" path="res://sfx/beep.mp3" id="1_0ih7f"]
+[ext_resource type="Script" uid="uid://bj8og3loaqs2j" path="res://sfx/sfx.gd" id="1_x61o7"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x61o7"]
+random_pitch = 1.0293022
+streams_count = 1
+stream_0/stream = ExtResource("1_0ih7f")
+
+[node name="SFX" type="Node" unique_id=722779934]
+script = ExtResource("1_x61o7")
+
+[node name="ButtonClickPlayer" type="AudioStreamPlayer" parent="." unique_id=601955673]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_x61o7")
+max_polyphony = 3

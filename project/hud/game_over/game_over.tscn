@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cptphqvknxg7y" path="res://hud/game_over/game_over.gd" id="1_io4e5"]
 [ext_resource type="PackedScene" uid="uid://bog4pyusw53tc" path="res://hud/scorecard/scorecard.tscn" id="2_nacpw"]
+[ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/sound_button.gd" id="3_ylt0n"]
 
 [node name="GameOver" type="Control" unique_id=2057868860]
 layout_mode = 3
@@ -72,13 +73,17 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="PlayAgainButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=8705621]
+[node name="PlayAgainButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=224345897]
 layout_mode = 2
 text = "Play Again"
+script = ExtResource("3_ylt0n")
+metadata/_custom_type_script = "uid://f3yuqap0adlw"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=629358896]
+[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1602696787]
 layout_mode = 2
 text = "Quit"
+script = ExtResource("3_ylt0n")
+metadata/_custom_type_script = "uid://f3yuqap0adlw"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
