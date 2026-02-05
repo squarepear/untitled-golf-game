@@ -6,6 +6,9 @@ var _camera_rotation_speed: float = 0.05
 
 @onready var _h_box_container: HBoxContainer = %HBoxContainer
 @onready var _camera_3d: Camera3D = %Camera3D
+@onready var _player_join: CanvasLayer = %PlayerJoin
+@onready var _opening_screen: CanvasLayer = %OpeningScreen
+@onready var _credits: CanvasLayer = $Credits
 
 
 
@@ -40,3 +43,21 @@ func _on_delete_player_button_pressed() -> void:
 		var current_player_customizer = _h_box_container.get_child(PlayerInfo.players)
 		_h_box_container.remove_child(current_player_customizer)
 		current_player_customizer.queue_free()
+
+
+func _on_main_menu_button_pressed() -> void:
+	_player_join.hide()
+	_opening_screen.show()
+
+
+func _on_play_game_button_pressed() -> void:
+	_player_join.show()
+	_opening_screen.hide()
+
+
+func _on_close_button_pressed() -> void:
+	_credits.hide()
+
+
+func _on_credits_button_pressed() -> void:
+	_credits.show()
