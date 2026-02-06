@@ -12,6 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://tmtdgiqf263" path="res://sfx/in_hole/Golf_Ball_Landing.mp3" id="10_8rwud"]
 [ext_resource type="AudioStream" uid="uid://budr7xbjw3l0h" path="res://sfx/in_hole/Green_Drop.mp3" id="11_p8kw4"]
 [ext_resource type="AudioStream" uid="uid://bpe6nqaf2kxb8" path="res://sfx/in_hole/Hole_Plunge.mp3" id="12_ju0p8"]
+[ext_resource type="AudioStream" uid="uid://depf6xgc23tn1" path="res://sfx/bounce/bounce-1.wav" id="13_q3aos"]
+[ext_resource type="AudioStream" uid="uid://br6ktclm1ifes" path="res://sfx/bounce/bounce-2.wav" id="14_f8i2a"]
+[ext_resource type="AudioStream" uid="uid://boesqacmagnwv" path="res://sfx/bounce/bounce-3.wav" id="15_ekfbg"]
+[ext_resource type="AudioStream" uid="uid://bl3bu1tmg6yd5" path="res://sfx/bounce/bounce-4.wav" id="16_8lins"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x61o7"]
 random_pitch = 1.0293022
@@ -38,6 +42,15 @@ stream_0/stream = ExtResource("10_8rwud")
 stream_1/stream = ExtResource("11_p8kw4")
 stream_2/stream = ExtResource("12_ju0p8")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iriep"]
+random_pitch = 1.0472941
+random_volume_offset_db = 1.0
+streams_count = 4
+stream_0/stream = ExtResource("13_q3aos")
+stream_1/stream = ExtResource("14_f8i2a")
+stream_2/stream = ExtResource("15_ekfbg")
+stream_3/stream = ExtResource("16_8lins")
+
 [node name="SFX" type="Node" unique_id=722779934]
 script = ExtResource("1_x61o7")
 
@@ -55,3 +68,6 @@ max_polyphony = 5
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_migfp")
 max_polyphony = 3
+
+[node name="BallBouncePlayer" type="AudioStreamPlayer" parent="." unique_id=1141077341]
+stream = SubResource("AudioStreamRandomizer_iriep")

@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		var normal := collision.get_normal()
 		var remainder := collision.get_remainder()
 		var grazing_angle: float = abs(normal.dot(velocity.normalized()))
-		SFX.play_ball_hit(grazing_angle)
+		SFX.play_ball_bounce(grazing_angle)
 		velocity = velocity.bounce(normal) * (1.0 - COLLISION_ABSORPTION * grazing_angle)
 
 		if remainder.length() < 0.01:
