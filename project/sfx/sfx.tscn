@@ -49,7 +49,7 @@ max_polyphony = 3
 [node name="BallHitPlayer" type="AudioStreamPlayer" parent="." unique_id=965372109]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_q3aos")
-max_polyphony = 3
+max_polyphony = 5
 
 [node name="BallInHolePlayer" type="AudioStreamPlayer" parent="." unique_id=525469468]
 unique_name_in_owner = true

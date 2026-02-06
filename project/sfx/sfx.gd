@@ -1,5 +1,8 @@
 extends Node
 
+const MIN_BOUNCE_STRENGTH := 0.3
+const BOUNCE_DB_SCALE := 6.0
+
 @onready var _button_click_player: AudioStreamPlayer = %ButtonClickPlayer
 @onready var _ball_hit_player: AudioStreamPlayer = %BallHitPlayer
 @onready var _ball_in_hole_player: AudioStreamPlayer = %BallInHolePlayer
@@ -9,7 +12,12 @@ func play_button_click() -> void:
 	_button_click_player.play()
 
 
-func play_ball_hit() -> void:
+func play_ball_hit(strength := 1.0) -> void:
+	if strength < MIN_BOUNCE_STRENGTH:
+		return
+
+	var db := (strength * BOUNCE_DB_SCALE) - BOUNCE_DB_SCALE
+	_ball_hit_player.volume_db = db
 	_ball_hit_player.play()
 
 
