@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cfrpoidag3rr2"]
 
 [ext_resource type="Script" uid="uid://bj8og3loaqs2j" path="res://sfx/sfx.gd" id="1_x61o7"]
-[ext_resource type="AudioStream" uid="uid://bb8vymsg3g61d" path="res://sfx/button/beep.mp3" id="2_8rwud"]
+[ext_resource type="AudioStream" uid="uid://ck4h7otsj0xnq" path="res://sfx/button/click-1.wav" id="2_8lins"]
 [ext_resource type="AudioStream" uid="uid://b8ymsw3m2ukwi" path="res://sfx/hit/putt-1.wav" id="3_ffahm"]
+[ext_resource type="AudioStream" uid="uid://vtt5o2myk6lg" path="res://sfx/button/click-2.wav" id="3_iriep"]
 [ext_resource type="AudioStream" uid="uid://bg846mca427vd" path="res://sfx/hit/putt-2.wav" id="4_a2m83"]
+[ext_resource type="AudioStream" uid="uid://b7ofmll57emkq" path="res://sfx/button/click-3.wav" id="4_oqbpg"]
+[ext_resource type="AudioStream" uid="uid://d02rw0p6ggxud" path="res://sfx/button/click-4.wav" id="5_1voc5"]
 [ext_resource type="AudioStream" uid="uid://wmae7q16x80t" path="res://sfx/hit/putt-3.wav" id="5_rg0p6"]
 [ext_resource type="AudioStream" uid="uid://cc5itlvywc33q" path="res://sfx/hit/putt-4.wav" id="6_8rwud"]
 [ext_resource type="AudioStream" uid="uid://gfts53xe0568" path="res://sfx/hit/putt-5.wav" id="7_p8kw4"]
@@ -19,8 +22,11 @@
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x61o7"]
 random_pitch = 1.0293022
-streams_count = 1
-stream_0/stream = ExtResource("2_8rwud")
+streams_count = 4
+stream_0/stream = ExtResource("2_8lins")
+stream_1/stream = ExtResource("3_iriep")
+stream_2/stream = ExtResource("4_oqbpg")
+stream_3/stream = ExtResource("5_1voc5")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q3aos"]
 random_pitch = 1.0472941
