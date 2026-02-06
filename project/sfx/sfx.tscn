@@ -76,4 +76,8 @@ stream = SubResource("AudioStreamRandomizer_migfp")
 max_polyphony = 3
 
 [node name="BallBouncePlayer" type="AudioStreamPlayer" parent="." unique_id=1141077341]
+unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_iriep")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1927478762]
+autoplay = true

@@ -6,7 +6,7 @@ const BOUNCE_DB_SCALE := 6.0
 @onready var _button_click_player: AudioStreamPlayer = %ButtonClickPlayer
 @onready var _ball_hit_player: AudioStreamPlayer = %BallHitPlayer
 @onready var _ball_in_hole_player: AudioStreamPlayer = %BallInHolePlayer
-@onready var _ball_bounce_player: AudioStreamPlayer = $BallBouncePlayer
+@onready var _ball_bounce_player: AudioStreamPlayer = %BallBouncePlayer
 
 
 func play_button_click() -> void:
