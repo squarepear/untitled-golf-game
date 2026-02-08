@@ -16,6 +16,6 @@ func add_player() -> void:
 
 
 func delete_player() -> void:
-		players -= 1
-		colors.remove_at(players)
-		names.remove_at(players)
+	players -= 1
+	colors.remove_at(players)
+	names.remove_at(players)

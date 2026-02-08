@@ -20,6 +20,7 @@ func play_ball_hit() -> void:
 func play_ball_enter_hole() -> void:
 	_ball_in_hole_player.play()
 
+
 func play_ball_bounce(strength := 1.0) -> void:
 	if strength < MIN_BOUNCE_STRENGTH:
 		return

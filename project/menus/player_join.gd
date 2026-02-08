@@ -11,7 +11,6 @@ var _camera_rotation_speed: float = 0.05
 @onready var _credits: CanvasLayer = $Credits
 
 
-
 func _ready() -> void:
 	for n in PlayerInfo.players:
 		_create_player_customizer(n)

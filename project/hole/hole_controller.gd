@@ -31,7 +31,6 @@ func end_turn(silent := false) -> void:
 	super(silent)
 
 
-
 func set_target(target: Hole) -> void:
 	_hole = target
 	turn_ended.connect(_hole.move.bind(Vector2.ZERO))

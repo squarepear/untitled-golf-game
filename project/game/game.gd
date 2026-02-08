@@ -44,6 +44,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		%Escape.hide()
 
+
 func _next_turn() -> void:
 	_turn_order.append(_turn_order.pop_front())
 	_hud.set_current_player(_turn_order[0])

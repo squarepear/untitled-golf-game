@@ -50,13 +50,15 @@ func get_course() -> Course:
 func get_winner() -> Controller:
 	var scores: Array
 	for player in _scores.keys():
-		scores.append({
-			"player": player, 
-			"score": _scores[player].course_score()
-			})
+		scores.append(
+			{
+				"player": player,
+				"score": _scores[player].course_score(),
+			},
+		)
 
 	scores.sort_custom(
-		func(a,b):
+		func(a, b):
 			return a.score < b.score
 	)
 

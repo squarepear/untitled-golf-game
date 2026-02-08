@@ -10,7 +10,6 @@ var _scorekeeper: Scorekeeper
 @onready var _game_over: Control = %GameOver
 
 
-
 func _process(_delta: float) -> void:
 	if _current_player is HoleController:
 		_time_left_label.text = str(_current_player.get_time_remaining())

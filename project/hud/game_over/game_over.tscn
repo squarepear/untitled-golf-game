@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cptphqvknxg7y" path="res://hud/game_over/game_over.gd" id="1_io4e5"]
 [ext_resource type="PackedScene" uid="uid://bog4pyusw53tc" path="res://hud/scorecard/scorecard.tscn" id="2_nacpw"]
-[ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/sound_button.gd" id="3_ylt0n"]
+[ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/audio_button.gd" id="3_ylt0n"]
 
 [node name="GameOver" type="Control" unique_id=2057868860]
 layout_mode = 3

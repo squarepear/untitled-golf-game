@@ -10,6 +10,10 @@ static var _main: PlayerCamera
 @onready var _camera: Camera3D = %Camera3D
 
 
+static func main() -> PlayerCamera:
+	return _main
+
+
 func _ready() -> void:
 	if _main:
 		_main.queue_free()
@@ -26,8 +30,17 @@ func _process(delta: float) -> void:
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		return
 
-	rotate_y(-(Input.get_last_mouse_velocity().x / get_viewport().get_visible_rect().size.x) * ROTATION_SPEED)
-	_camera.rotate_x(-(Input.get_last_mouse_velocity().y / get_viewport().get_visible_rect().size.x) * ROTATION_SPEED)
+	var mouse_velocity := Input.get_last_mouse_velocity() / get_viewport().get_visible_rect().size
+
+	rotate_y(-mouse_velocity.x * ROTATION_SPEED)
+	_camera.rotate_x(-mouse_velocity.y * ROTATION_SPEED)
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1:
+		lock()
+	elif event.is_action_pressed("ui_cancel"):
+		unlock()
 
 
 func set_target(target: Node3D) -> void:
@@ -39,13 +52,6 @@ func get_dir(dir: Vector2) -> Vector2:
 	return Vector2(vec.x, vec.z)
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == 1:
-		lock()
-	elif event.is_action_pressed("ui_cancel"):
-		unlock()
-
-
 func lock() -> void:
 	if not _target:
 		return
@@ -55,7 +61,3 @@ func lock() -> void:
 
 func unlock() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-
-static func main() -> PlayerCamera:
-	return _main
