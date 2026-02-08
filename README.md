@@ -19,6 +19,8 @@ This project uses `just` to manage development tasks.
 - `just lint`: Check GDScript code style.
 - `just format`: Format GDScript code.
 - `just build [platform]`: Build the project. (defaults to web)
+- `just dev`: Open the project in the Godot editor.
+- `just play`: Run the game.
 
 ## Third Party Assets
 

@@ -12,3 +12,9 @@ build platform="web":
     mkdir -p builds/{{ platform }}/
     godot --headless --path project --export-release {{ platform }}
     zip -r builds/{{ platform }}.zip builds/{{ platform }}/
+
+dev:
+    godot --path project --editor
+
+play:
+    godot --path project
