@@ -8,6 +8,14 @@ var _color: Color
 var _is_active: bool = false
 
 
+func _input(event: InputEvent) -> void:
+	if _is_active or not get_target():
+		return
+
+	if event.is_action_pressed("show_players"):
+		PlayerIndicator.create(get_target(), _color)
+
+
 func start_turn() -> void:
 	if _is_active:
 		return

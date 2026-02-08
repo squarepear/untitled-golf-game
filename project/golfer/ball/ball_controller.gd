@@ -24,6 +24,8 @@ func _process(_delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	super(event)
+
 	if not _can_move or not _is_active:
 		return
 

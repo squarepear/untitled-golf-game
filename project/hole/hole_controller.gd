@@ -8,7 +8,9 @@ const MAX_TIME := 5
 var _timer: SceneTreeTimer
 
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+	super(event)
+
 	if not _is_active:
 		return
 
