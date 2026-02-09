@@ -1,8 +1,8 @@
 class_name Scorecard
 extends PanelContainer
 
-const _par_square_scene := preload("res://hud/scorecard/par_score_square.tscn")
-const _score_square_scene := preload("res://hud/scorecard/score_square.tscn")
+const PAR_SQUARE := preload("res://hud/scorecard/par_score_square.tscn")
+const SCORE_SQUARE := preload("res://hud/scorecard/score_square.tscn")
 
 var _scorekeeper: Scorekeeper
 
@@ -57,21 +57,21 @@ func _create_player_name(player_name: String) -> Label:
 
 
 func _create_par_square(score: int) -> ScoreSquare:
-	var score_square: ScoreSquare = _par_square_scene.instantiate()
+	var score_square: ScoreSquare = PAR_SQUARE.instantiate()
 	_pars_container.add_child(score_square)
 	score_square.set_score(score)
 	return score_square
 
 
 func _create_score_square(score: int) -> ScoreSquare:
-	var score_square: ScoreSquare = _score_square_scene.instantiate()
+	var score_square: ScoreSquare = SCORE_SQUARE.instantiate()
 	_score_container.add_child(score_square)
 	score_square.set_score(score)
 	return score_square
 
 
 func _create_total_score_square(score: int) -> ScoreSquare:
-	var score_square: ScoreSquare = _score_square_scene.instantiate()
+	var score_square: ScoreSquare = SCORE_SQUARE.instantiate()
 	_score_totals_container.add_child(score_square)
 	score_square.set_score(score)
 	return score_square

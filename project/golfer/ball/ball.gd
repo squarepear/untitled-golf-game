@@ -19,7 +19,7 @@ var _has_hit := false
 
 func _ready() -> void:
 	set_aimer_visibility(false)
-	_power_indicator.position.z = -_power_indicator.mesh.size.y/2
+	_power_indicator.position.z = -_power_indicator.mesh.size.y / 2
 
 
 func _process(_delta: float) -> void:
@@ -66,12 +66,13 @@ func adjust_power(amount: float) -> void:
 	_power_percentage += amount
 	_power_percentage = clamp(_power_percentage, 0, MAX_POWER)
 	_power_indicator.mesh.size.y = _power_percentage
-	_power_indicator.position.z = -_power_indicator.mesh.size.y/2
+	_power_indicator.position.z = -_power_indicator.mesh.size.y / 2
 
 
 func reset_aimer_display() -> void:
 	_power_indicator.mesh.size.y = _power_percentage
-	_power_indicator.position.z = -_power_indicator.mesh.size.y/2
+	_power_indicator.position.z = -_power_indicator.mesh.size.y / 2
+
 
 func set_aimer_visibility(aimer_is_visible: bool) -> void:
 	if aimer_is_visible:

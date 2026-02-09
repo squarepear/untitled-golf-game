@@ -2,10 +2,10 @@ _default:
     @just --list
 
 lint:
-    gdscript-formatter lint --pretty project/**/*.gd
+    gdscript-formatter lint --pretty $(find project -name "*.gd")
 
 format:
-    gdscript-formatter --reorder-code project/**/*.gd
+    gdscript-formatter --reorder-code $(find project -name "*.gd")
 
 build platform="web":
     rm -r builds/{{ platform }}/ || true
