@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://y0n7fcopk6vo" path="res://menus/player_join.gd" id="1_i3t51"]
 [ext_resource type="PackedScene" uid="uid://qp7aqwt0frih" path="res://courses/course.tscn" id="2_i3t51"]
 [ext_resource type="Theme" uid="uid://c82rvsnroti0w" path="res://hud/hud_theme.tres" id="3_jjmb0"]
-[ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/audio_button.gd" id="3_tiqyx"]
+[ext_resource type="Script" path="res://menus/audio_button.gd" id="3_tiqyx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjmb0"]
 bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0.57254905)

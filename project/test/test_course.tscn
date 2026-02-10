@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b6woiy4akceja"]
+
+[ext_resource type="Script" uid="uid://d0dtxpmdrrbwn" path="res://courses/course.gd" id="1_3g3yv"]
+[ext_resource type="Script" uid="uid://d4fdhvwtksbwc" path="res://courses/level.gd" id="2_gvi6u"]
+
+[node name="TestCourse" type="Node3D" unique_id=756981362]
+script = ExtResource("1_3g3yv")
+
+[node name="Levels" type="Node3D" parent="." unique_id=1039683575]
+unique_name_in_owner = true
+
+[node name="Level0" type="Node3D" parent="Levels" unique_id=139170940]
+script = ExtResource("2_gvi6u")
+
+[node name="SpawnPatch" type="Node3D" parent="Levels/Level0" unique_id=1217892842]
+
+[node name="HoleSpawn" type="Node3D" parent="Levels/Level0" unique_id=39156991]
