@@ -21,6 +21,7 @@ This project uses `just` to manage development tasks.
 - `just build [platform]`: Build the project. (defaults to web)
 - `just dev`: Open the project in the Godot editor.
 - `just play`: Run the game.
+- `just screenshot [path]`: Generate a screenshot of the main menu. (defaults to "screenshots/screenshot.png")
 
 ## Third Party Assets
 

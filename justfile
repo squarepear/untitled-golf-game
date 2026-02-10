@@ -18,3 +18,8 @@ dev:
 
 play:
     godot --path project
+
+
+screenshot path="screenshots/screenshot.png":
+    mkdir -p $(dirname "{{ path }}")
+    godot --path project -s tools/screenshot.gd -- $(pwd)/{{ path }}
