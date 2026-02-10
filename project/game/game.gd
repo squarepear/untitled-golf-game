@@ -34,7 +34,7 @@ func _ready() -> void:
 
 	_hud.set_current_player(_turn_order[0])
 	_hud.set_scorekeeper(_scorekeeper)
-	_turn_order[0].start_turn()
+	_turn_order[0].start_turn(_scorekeeper.get_until_par(_turn_order[0]))
 	_camera.set_target(_turn_order[0].get_target())
 
 
@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 func _next_turn() -> void:
 	_turn_order.append(_turn_order.pop_front())
 	_hud.set_current_player(_turn_order[0])
-	_turn_order[0].start_turn()
+	_turn_order[0].start_turn(_scorekeeper.get_until_par(_turn_order[0]))
 	_camera.set_target(_turn_order[0].get_target())
 
 
@@ -94,7 +94,7 @@ func _level_complete() -> void:
 	_spawn_hole()
 	_hud.set_current_player(_turn_order[0])
 
-	_turn_order[0].start_turn()
+	_turn_order[0].start_turn(_scorekeeper.get_until_par(_turn_order[0]))
 	_camera.set_target(_turn_order[0].get_target())
 
 

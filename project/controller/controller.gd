@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 		PlayerIndicator.create(get_target(), _color)
 
 
-func start_turn() -> void:
+func start_turn(_until_par: int) -> void:
 	if _is_active:
 		return
 

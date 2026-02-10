@@ -13,6 +13,8 @@ func set_up(course: Course, players: Array[Controller]) -> void:
 	for player in players:
 		if player is BallController:
 			player.ball_hit.connect(increment_level_score.bind(player))
+		if player is HoleController:
+			player.turn_ended.connect(increment_level_score.bind(player))
 		_scores[player] = LevelScores.new(course.get_levels(), player is HoleController)
 
 
@@ -45,6 +47,10 @@ func get_scores() -> Array[LevelScores]:
 
 func get_course() -> Course:
 	return _course
+
+
+func get_until_par(player: Controller) -> int:
+	return _course.get_current_level().get_par() - _scores[player].scores[_current_level]
 
 
 func get_winner() -> Controller:
@@ -83,6 +89,8 @@ class LevelScores:
 
 
 	func update_hole_score(level_index: int, others_scores: Array[LevelScores]) -> void:
+		scores[level_index] = 0
+
 		for other_scores in others_scores:
 			if other_scores == self:
 				continue

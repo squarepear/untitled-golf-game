@@ -36,8 +36,8 @@ func _input(event: InputEvent) -> void:
 		_ball.set_aimer_visibility(false)
 
 
-func start_turn() -> void:
-	super()
+func start_turn(until_par: int) -> void:
+	super(until_par)
 	_can_move = true
 	_ball.reset_aimer_display()
 	_ball.set_aimer_visibility(true)
