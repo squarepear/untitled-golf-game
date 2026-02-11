@@ -15,7 +15,7 @@ func set_up(course: Course, players: Array[Controller]) -> void:
 			player.ball_hit.connect(increment_level_score.bind(player))
 		if player is HoleController:
 			player.turn_ended.connect(increment_level_score.bind(player))
-		_scores[player] = LevelScores.new(course.get_levels(), player is HoleController)
+		_scores[player] = LevelScores.new(course.get_levels())
 
 
 func increment_level_score(player: Controller):
@@ -77,9 +77,9 @@ class LevelScores:
 	var is_complete: Array[bool] = []
 
 
-	func _init(levels: Array[Level], par_disabled := false) -> void:
+	func _init(levels: Array[Level]) -> void:
 		for level in levels:
-			pars.append(0 if par_disabled else level.get_par())
+			pars.append(level.get_par())
 			scores.append(0)
 			is_complete.append(false)
 
@@ -89,13 +89,13 @@ class LevelScores:
 
 
 	func update_hole_score(level_index: int, others_scores: Array[LevelScores]) -> void:
-		scores[level_index] = 0
+		scores[level_index] = pars[level_index]
 
 		for other_scores in others_scores:
 			if other_scores == self:
 				continue
 
-			var other_score := other_scores.level_score(level_index)
+			var other_score := other_scores.level_delta(level_index)
 			if other_score < 0:
 				scores[level_index] += 1
 			elif other_score > 0:
@@ -107,6 +107,10 @@ class LevelScores:
 
 
 	func level_score(level_index: int) -> int:
+		return scores[level_index]
+
+
+	func level_delta(level_index: int) -> int:
 		return scores[level_index] - pars[level_index]
 
 
