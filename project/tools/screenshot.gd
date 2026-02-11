@@ -9,8 +9,12 @@ func _init() -> void:
 	var args := OS.get_cmdline_user_args()
 	var screenshot_path = args[0] if args.size() > 0 else DEFAULT_PATH
 
+	ProjectSettings.set_setting("display/window/stretch/aspect", "expand")
 	change_scene_to_packed(MAIN_SCENE)
 	await process_frame
+	await process_frame
+	#get_root().get_viewport().get_window().size = Vector2i(630, 500)
+	get_root().get_child(-1).get_node("%Buttons").hide()
 	await process_frame
 
 	var err = take_screenshot(screenshot_path)

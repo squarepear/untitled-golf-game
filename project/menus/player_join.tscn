@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://y0n7fcopk6vo" path="res://menus/player_join.gd" id="1_i3t51"]
 [ext_resource type="PackedScene" uid="uid://qp7aqwt0frih" path="res://courses/course.tscn" id="2_i3t51"]
 [ext_resource type="Theme" uid="uid://c82rvsnroti0w" path="res://hud/hud_theme.tres" id="3_jjmb0"]
-[ext_resource type="Script" path="res://menus/audio_button.gd" id="3_tiqyx"]
+[ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/audio_button.gd" id="3_tiqyx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjmb0"]
 bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0.57254905)
@@ -92,7 +92,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jjmb0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OpeningScreen/PanelContainer" unique_id=1373544467]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Title" type="Label" parent="OpeningScreen/PanelContainer/VBoxContainer" unique_id=809044690]
@@ -101,20 +100,22 @@ theme_override_font_sizes/font_size = 128
 text = "Golf but the Hole Plays Too!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="ButtonVBoxContainer" type="VBoxContainer" parent="OpeningScreen/PanelContainer/VBoxContainer" unique_id=919857604]
+[node name="Buttons" type="VBoxContainer" parent="OpeningScreen/PanelContainer/VBoxContainer" unique_id=919857604]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 
-[node name="PlayGameButton" type="Button" parent="OpeningScreen/PanelContainer/VBoxContainer/ButtonVBoxContainer" unique_id=1180102219]
+[node name="PlayGameButton" type="Button" parent="OpeningScreen/PanelContainer/VBoxContainer/Buttons" unique_id=1180102219]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " Play Game! "
 script = ExtResource("3_tiqyx")
 
-[node name="CreditsButton" type="Button" parent="OpeningScreen/PanelContainer/VBoxContainer/ButtonVBoxContainer" unique_id=1435450777]
+[node name="CreditsButton" type="Button" parent="OpeningScreen/PanelContainer/VBoxContainer/Buttons" unique_id=1435450777]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Credits"
@@ -220,6 +221,6 @@ script = ExtResource("3_tiqyx")
 [connection signal="pressed" from="PlayerJoin/HBoxContainer2/AddPlayerButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PlayerJoin/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="PlayerJoin/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="OpeningScreen/PanelContainer/VBoxContainer/ButtonVBoxContainer/PlayGameButton" to="." method="_on_play_game_button_pressed"]
-[connection signal="pressed" from="OpeningScreen/PanelContainer/VBoxContainer/ButtonVBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="OpeningScreen/PanelContainer/VBoxContainer/Buttons/PlayGameButton" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="OpeningScreen/PanelContainer/VBoxContainer/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Credits/CloseButton" to="." method="_on_close_button_pressed"]
