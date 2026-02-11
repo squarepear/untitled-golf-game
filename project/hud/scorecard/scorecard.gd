@@ -77,9 +77,12 @@ func _create_total_score_square(score: int) -> ScoreSquare:
 	return score_square
 
 
-func _update() -> void:
+func _update(player_index := -1) -> void:
 	var scores := _scorekeeper.get_scores()
 	for i in scores.size():
+		if not (player_index < 0 or i == player_index):
+			continue
+
 		for j in range(_score_container.columns):
 			_get_score_square(i, j).set_score(scores[i].scores[j])
 		_score_totals_container.get_child(i).set_score(scores[i].course_score())

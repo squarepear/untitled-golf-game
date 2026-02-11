@@ -1,7 +1,7 @@
 class_name Scorekeeper
 extends Node
 
-signal updated
+signal updated(player_index: int)
 
 var _current_level := 0
 var _course: Course
@@ -25,7 +25,7 @@ func increment_level_score(player: Controller):
 func complete_level(player: Controller = null):
 	if player:
 		_scores[player].complete_level(_current_level)
-		updated.emit()
+		updated.emit(get_players().find(player))
 		return
 
 	for p in _scores.keys():
@@ -34,7 +34,7 @@ func complete_level(player: Controller = null):
 		_scores[p].complete_level(_current_level)
 
 	_current_level += 1
-	updated.emit()
+	updated.emit(-1)
 
 
 func get_players() -> Array[Controller]:

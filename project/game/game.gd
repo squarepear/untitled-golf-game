@@ -68,9 +68,9 @@ func _on_ball_entered_hole(ball: Ball) -> void:
 		return
 
 	if ball_controller_index == 0:
+		_scorekeeper.complete_level(_turn_order[0])
 		_turn_order[0].end_turn(true)
 		_next_turn()
-		_scorekeeper.complete_level(_turn_order[0])
 		_turn_order.remove_at(_turn_order.size() - 1)
 	else:
 		_scorekeeper.complete_level(_turn_order[ball_controller_index])
