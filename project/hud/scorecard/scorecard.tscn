@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bog4pyusw53tc"]
+[gd_scene format=3 uid="uid://bog4pyusw53tc"]
 
 [ext_resource type="PackedScene" uid="uid://ce7t4yjrk7mq1" path="res://hud/scorecard/score_square.tscn" id="1_t2b3i"]
 [ext_resource type="Script" uid="uid://bqxulpc7gywh6" path="res://hud/scorecard/scorecard.gd" id="1_tc0n1"]
 [ext_resource type="Texture2D" uid="uid://dv56xpgvlx7ro" path="res://hud/golf_icon.png" id="2_xaf5n"]
 [ext_resource type="PackedScene" uid="uid://dumf05uh511pg" path="res://hud/scorecard/par_score_square.tscn" id="3_q6wux"]
 
-[node name="Scorecard" type="PanelContainer"]
+[node name="Scorecard" type="PanelContainer" unique_id=351510399]
 custom_minimum_size = Vector2(478, 224)
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,184 +20,184 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tc0n1")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1486100627]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=381949750]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1576603875]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=555318457]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 48
 text = "Scores"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1267984778]
 layout_mode = 2
 texture = ExtResource("2_xaf5n")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=2009924762]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1402423828]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1330711511]
 layout_mode = 2
 theme_override_constants/margin_top = 15
 
-[node name="PlayerNamesContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+[node name="PlayerNamesContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=425424360]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/PlayerNamesContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/PlayerNamesContainer" unique_id=1757065500]
 layout_mode = 2
 text = "Player 1"
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/PlayerNamesContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/PlayerNamesContainer" unique_id=302386349]
 layout_mode = 2
 text = "Player 2"
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1710959928]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1015800702]
 layout_mode = 2
 theme_override_constants/separation = -8
 
-[node name="ParsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="ParsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=855019790]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ScoreSquare" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=916101749 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare2" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare2" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=177965616 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare3" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare3" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=1978657630 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare4" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare4" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=453462779 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare5" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare5" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=151365756 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare6" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare6" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=67426794 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare7" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare7" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=695332369 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare8" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare8" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=1219217657 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreSquare9" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" instance=ExtResource("3_q6wux")]
+[node name="ScoreSquare9" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ParsContainer" unique_id=1380677276 instance=ExtResource("3_q6wux")]
 layout_mode = 2
 
-[node name="ScoreContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="ScoreContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1216228364]
 unique_name_in_owner = true
 layout_mode = 2
 columns = 9
 
-[node name="ScoreSquare1" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare1" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=872735888 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare2" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare2" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1643537477 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare3" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare3" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=351670025 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare4" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare4" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=2104712857 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare5" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare5" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1723439652 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare6" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare6" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1864064807 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare7" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare7" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1370634166 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare8" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare8" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1451928635 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare9" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare9" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1168377128 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare10" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare10" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1958527077 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare11" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare11" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=586528031 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare12" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare12" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1843579471 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare13" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare13" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=1196862189 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare14" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare14" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=849023039 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare15" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare15" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=171305914 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare16" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare16" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=540115669 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare17" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare17" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=57418836 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquare18" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquare18" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScoreContainer" unique_id=813814657 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1759671176]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2098143810]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 15
 
-[node name="ScoreTotalsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2"]
+[node name="ScoreTotalsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2" unique_id=566774472]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ScoreSquareTotal" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/ScoreTotalsContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquareTotal" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/ScoreTotalsContainer" unique_id=1584145509 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreSquareTotal2" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/ScoreTotalsContainer" instance=ExtResource("1_t2b3i")]
+[node name="ScoreSquareTotal2" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/ScoreTotalsContainer" unique_id=1493691218 instance=ExtResource("1_t2b3i")]
 layout_mode = 2
 size_flags_horizontal = 3

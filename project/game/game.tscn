@@ -79,11 +79,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 54
 text = "Controls"
 
-[node name="ScoringParagraph2" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1715879761]
+[node name="ControlsParagraph2" type="Label" parent="Escape/PanelContainer/MarginContainer/VBoxContainer" unique_id=1715879761]
 layout_mode = 2
 text = "The ball angle moves along with the camera. Use your mouse to aim the ball. Press the Spacebar to shoot the ball.
 
-The hole moves using WASD. The camera can be controlled using the mouse. The hole will have 5 seconds to finish its turn once it begins moving.
+The hole moves using WASD. The camera can be controlled using the mouse. The hole will have 5 seconds to finish its turn once it begins moving. This time will grow shorter as the round goes on.
+
+Any player can press F during their turn to locate the other players.
 
 
 Click to continue game."
