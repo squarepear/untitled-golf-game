@@ -25,6 +25,6 @@ play:
     godot --path project
 
 
-screenshot path="screenshots/screenshot.png":
+screenshot path="screenshots/%s.png":
     mkdir -p $(dirname "{{ path }}")
-    godot --path project -s tools/screenshot.gd -- $(pwd)/{{ path }}
+    godot --path project -s "uid://dfpbq23ycuc70" -- $(pwd)/{{ path }} $(grep -rl "uid://d02f7u7rffdbn" --include="*.tscn" project | sed 's|^project/||')

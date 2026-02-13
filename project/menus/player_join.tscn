@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://qp7aqwt0frih" path="res://courses/course.tscn" id="2_i3t51"]
 [ext_resource type="Theme" uid="uid://c82rvsnroti0w" path="res://hud/hud_theme.tres" id="3_jjmb0"]
 [ext_resource type="Script" uid="uid://f3yuqap0adlw" path="res://menus/audio_button.gd" id="3_tiqyx"]
+[ext_resource type="Script" uid="uid://d02f7u7rffdbn" path="res://tools/screenshot/screenshot_component.gd" id="5_slhmw"]
+[ext_resource type="Script" uid="uid://28yg1hgoxa5x" path="res://tools/screenshot/screenshot_adjustment.gd" id="6_m372r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjmb0"]
 bg_color = Color(0.9254902, 0.9254902, 0.9254902, 0.57254905)
@@ -11,6 +13,12 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="Resource" id="Resource_7xwfu"]
+script = ExtResource("6_m372r")
+target_path = NodePath("../OpeningScreen/PanelContainer/VBoxContainer/Title:theme_override_font_sizes/font_size")
+value = 256
+metadata/_custom_type_script = "uid://28yg1hgoxa5x"
 
 [node name="PlayerJoin" type="Node3D" unique_id=118101996]
 script = ExtResource("1_i3t51")
@@ -103,7 +111,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Buttons" type="VBoxContainer" parent="OpeningScreen/PanelContainer/VBoxContainer" unique_id=919857604]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -216,6 +223,19 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 64
 text = " X "
 script = ExtResource("3_tiqyx")
+
+[node name="BannerScreenshotComponent" type="Node" parent="." unique_id=2029844427 node_paths=PackedStringArray("hide_nodes")]
+script = ExtResource("5_slhmw")
+resolution = Vector2i(1920, 540)
+hide_nodes = [NodePath("../OpeningScreen/PanelContainer/VBoxContainer/Buttons")]
+metadata/_custom_type_script = "uid://d02f7u7rffdbn"
+
+[node name="CoverScreenshotComponent" type="Node" parent="." unique_id=289669994 node_paths=PackedStringArray("hide_nodes")]
+script = ExtResource("5_slhmw")
+resolution = Vector2i(630, 500)
+hide_nodes = [NodePath("../OpeningScreen/PanelContainer/VBoxContainer/Buttons")]
+adjustments = Array[ExtResource("6_m372r")]([SubResource("Resource_7xwfu")])
+metadata/_custom_type_script = "uid://d02f7u7rffdbn"
 
 [connection signal="pressed" from="PlayerJoin/HBoxContainer2/DeletePlayerButton" to="." method="_on_delete_player_button_pressed"]
 [connection signal="pressed" from="PlayerJoin/HBoxContainer2/AddPlayerButton" to="." method="_on_button_pressed"]
