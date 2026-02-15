@@ -1,2 +1,7 @@
 builds/
 screenshots/
+
+### nix + direnv ###
+result/
+.direnv/
+.devenv/
