@@ -228,6 +228,7 @@ script = ExtResource("3_tiqyx")
 script = ExtResource("5_slhmw")
 resolution = Vector2i(1920, 540)
 hide_nodes = [NodePath("../OpeningScreen/PanelContainer/VBoxContainer/Buttons")]
+adjustments = Array[ExtResource("6_m372r")]([SubResource("Resource_7xwfu")])
 metadata/_custom_type_script = "uid://d02f7u7rffdbn"
 
 [node name="CoverScreenshotComponent" type="Node" parent="." unique_id=289669994 node_paths=PackedStringArray("hide_nodes")]
